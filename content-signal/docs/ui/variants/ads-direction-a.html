@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Signal — Meta Ads (Direção A)</title>
+  <style>
+/* ==========================================================================
+   DIREÇÃO A — NOTION-STYLE TOKENS (Direção A do Signal)
+   ========================================================================== */
+
+:root {
+  /* Cores neutras */
+  --bg-primary: #fafafa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f0f0f0;
+  --bg-hover: #e8e8e8;
+
+  --text-primary: #111111;
+  --text-secondary: #333333;
+  --text-muted: #666677;
+  --text-inverse: #ffffff;
+
+  /* Cor primária (azul Notion-style) */
+  --color-primary: #2352d1;
+  --color-primary-hover: #1e40a8;
+  --color-primary-light: #e8ecf8;
+  --color-primary-text: #1a3680;
+
+  /* Cores semânticas */
+  --color-success: #15803d;
+  --color-success-light: #dcfce7;
+  --color-success-text: #166534;
+
+  --color-warning: #b45309;
+  --color-warning-light: #fef3c7;
+  --color-warning-text: #92400e;
+
+  --color-alert: #dc2626;
+  --color-alert-light: #fee2e2;
+  --color-alert-text: #991b1b;
+
+  /* Cinzas */
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
+
+  /* Bordas */
+  --border-color: #e0e0e0;
+  --border-color-strong: #cccccc;
+  --border-focus: var(--color-primary);
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.05);
+  --shadow-focus: 0 0 0 3px var(--color-primary-light);
+
+  /* Espaçamentos (escala Notion) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+
+  /* Tipografia — Inter / system-ui */
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-2xl: 28px;
+  --text-3xl: 32px;
+
+  /* Raio */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+
+  /* Transições */
+  --transition-fast: 120ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Layout */
+  --header-height: 64px;
+  --tabs-height: 48px;
+  --max-width: 1400px;
+  --sidebar-width: 280px;
+}
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f0f1a;
+    --bg-secondary: #1a1a2e;
+    --bg-tertiary: #26263e;
+    --bg-hover: #2e2e4e;
+
+    --text-primary: #ffffff;
+    --text-secondary: #d0d0d0;
+    --text-muted: #9999aa;
+    --text-inverse: #0f0f1a;
+
+    --color-primary: #4d7cff;
+    --color-primary-hover: #7aa3ff;
+    --color-primary-light: #2a3f5e;
+    --color-primary-text: #b3d4ff;
+
+    --color-success: #4ade80;
+    --color-success-light: #14532d;
+    --color-success-text: #86efac;
+
+    --color-warning: #fbbf24;
+    --color-warning-light: #45350a;
+    --color-warning-text: #fde047;
+
+    --color-alert: #f87171;
+    --color-alert-light: #451a1a;
+    --color-alert-text: #fca5a5;
+
+    --border-color: #333344;
+    --border-color-strong: #444455;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3);
+    --shadow-focus: 0 0 0 3px var(--color-primary-light);
+  }
+}
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Focus Visible Universal (SIG-UI-002)
+   ========================================================================== */
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Exceções controladas */
+.btn:focus-visible,
+select:focus-visible,
+input:focus-visible,
+.tab-btn:focus-visible,
+.data-table th:focus-visible,
+.btn-icon:focus-visible,
+.modal-close:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.btn:focus-visible {
+  box-shadow: var(--shadow-focus);
+}
+
+select:focus-visible,
+input:focus-visible {
+  box-shadow: var(--shadow-focus);
+}
+
+.tab-btn:focus-visible {
+  box-shadow: inset 0 -2px 0 var(--color-primary);
+}
+
+.data-table th:focus-visible {
+  outline-offset: -2px;
+}
+
+.modal-close:focus-visible {
+  outline-offset: 4px;
+}
+
+/* Remover :focus legados que usam box-shadow com cor de fundo */
+.btn:focus,
+select:focus,
+input:focus,
+.tab-btn:focus,
+.data-table th:focus,
+.btn-icon:focus,
+.modal-close:focus {
+  box-shadow: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   Layout Principal
+   ========================================================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.badge {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-primary-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.period-selector select {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  min-height: 44px;
+}
+
+.period-selector select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  min-height: 44px;
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--text-inverse);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Botões de ícone */
+.btn-icon {
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.btn-icon:hover {
+  background: var(--bg-tertiary);
+  color: var(--color-primary);
+}
+
+.btn-icon.alert:hover {
+  background: var(--color-alert-light);
+  color: var(--color-alert);
+}
+
+.btn-icon.primary:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.btn-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: var(--header-height);
+  z-index: 99;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-4);
+  height: var(--tabs-height);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+.tab-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.tab-btn:hover {
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+}
+
+.tab-btn.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  background: var(--bg-secondary);
+}
+
+.tab-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+  box-shadow: inset 0 -2px 0 var(--color-primary);
+}
+
+.main {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+  width: 100%;
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeIn var(--transition-normal) ease;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-panel {
+    animation: none;
+  }
+}
+
+.panel-header {
+  margin-bottom: var(--space-5);
+}
+
+.panel-header h1 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+  letter-spacing: -0.5px;
+}
+
+.panel-subtitle {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   Seções
+   ========================================================================== */
+
+.section {
+  margin-bottom: var(--space-6);
+}
+
+.section-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border-color);
+  letter-spacing: -0.25px;
+}
+
+/* ==========================================================================
+   KPI Grid
+   ========================================================================== */
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.kpi-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.kpi-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-color-strong);
+}
+
+.kpi-card.primary {
+  border-left: 3px solid var(--color-primary);
+}
+
+.kpi-card.warning {
+  border-left: 3px solid var(--color-warning);
+}
+
+.kpi-card.success {
+  border-left: 3px solid var(--color-success);
+}
+
+.kpi-label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.kpi-value {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-family-mono);
+  margin-bottom: var(--space-1);
+}
+
+.kpi-value.unavailable {
+  color: var(--text-muted);
+  font-size: var(--text-lg);
+  font-family: var(--font-family);
+}
+
+.kpi-sub {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.kpi-sub.positive {
+  color: var(--color-success);
+}
+
+.kpi-sub.negative {
+  color: var(--color-alert);
+}
+
+/* ==========================================================================
+   Charts
+   ========================================================================== */
+
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.chart-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.chart-container h3 {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+  text-align: center;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 280px !important;
+  max-height: 280px;
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+.table-container {
+  overflow-x: auto;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+/* Indicador visual de scroll horizontal (SIG-UI-005) */
+.table-container::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  background: linear-gradient(to right, transparent, var(--bg-secondary));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.table-container:hover::after,
+.table-container:focus-within::after {
+  opacity: 1;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.data-table thead {
+  background: var(--bg-tertiary);
+}
+
+.data-table th {
+  padding: var(--space-3) var(--space-2);
+  text-align: left;
+  font-weight: 600;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.data-table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.data-table tbody tr {
+  transition: background var(--transition-fast);
+}
+
+.data-table tbody tr:hover {
+  background: var(--bg-tertiary);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table .numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-family-mono);
+}
+
+.data-table .unavailable {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.data-table .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.data-table .badge-format-reel { background: var(--color-primary-light); color: var(--color-primary-text); }
+.data-table .badge-format-carousel { background: var(--color-success-light); color: var(--color-success-text); }
+.data-table .badge-format-photo { background: var(--color-warning-light); color: var(--color-warning-text); }
+.data-table .badge-format-story { background: var(--gray-200); color: var(--gray-700); }
+
+@media (prefers-color-scheme: dark) {
+  .data-table .badge-format-reel { background: var(--color-primary-light); color: var(--color-primary-text); }
+  .data-table .badge-format-carousel { background: var(--color-success-light); color: var(--color-success-text); }
+  .data-table .badge-format-photo { background: var(--color-warning-light); color: var(--color-warning-text); }
+  .data-table .badge-format-story { background: var(--gray-700); color: var(--gray-300); }
+}
+
+.data-table .badge-status-idea { background: var(--gray-200); color: var(--gray-700); }
+.data-table .badge-status-production { background: var(--color-primary-light); color: var(--color-primary-text); }
+.data-table .badge-status-published { background: var(--color-success-light); color: var(--color-success-text); }
+.data-table .badge-status-archived { background: var(--gray-200); color: var(--gray-500); }
+
+@media (prefers-color-scheme: dark) {
+  .data-table .badge-status-idea { background: var(--gray-700); color: var(--gray-400); }
+  .data-table .badge-status-production { background: var(--color-primary-light); color: var(--color-primary-text); }
+  .data-table .badge-status-published { background: var(--color-success-light); color: var(--color-success-text); }
+  .data-table .badge-status-archived { background: var(--gray-700); color: var(--gray-500); }
+}
+
+.data-table .badge-ad-high { background: var(--color-alert-light); color: var(--color-alert-text); }
+.data-table .badge-ad-medium { background: var(--color-warning-light); color: var(--color-warning-text); }
+.data-table .badge-ad-low { background: var(--color-success-light); color: var(--color-success-text); }
+
+/* ==========================================================================
+   Control Row
+   ========================================================================== */
+
+.control-row {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+  align-items: flex-end;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 140px;
+}
+
+.control-group label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.control-group select {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.control-group select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: var(--shadow-focus);
+}
+
+/* ==========================================================================
+   Suggestions
+   ========================================================================== */
+
+.suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.suggestion-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.suggestion-card.primary {
+  border-left: 3px solid var(--color-primary);
+}
+
+.suggestion-card.warning {
+  border-left: 3px solid var(--color-warning);
+}
+
+.suggestion-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.suggestion-body {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.suggestion-meta {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Funnel
+   ========================================================================== */
+
+.funnel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.funnel-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+  padding: var(--space-3);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-fast);
+}
+
+.funnel-step:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.funnel-value {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-1);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-family-mono);
+}
+
+.funnel-value.unavailable {
+  color: var(--text-muted);
+  font-size: var(--text-lg);
+}
+
+.funnel-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-1);
+}
+
+.funnel-rate {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.funnel-rate.positive {
+  color: var(--color-success);
+}
+
+.funnel-rate.negative {
+  color: var(--color-alert);
+}
+
+.funnel-arrow {
+  color: var(--text-muted);
+  font-size: var(--text-lg);
+}
+
+.funnel-note {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: var(--space-3);
+}
+
+.manual-badge {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Diagnosis
+   ========================================================================== */
+
+.diagnosis-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.diagnosis-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.diagnosis-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  color: var(--color-primary);
+}
+
+.diagnosis-content {
+  flex: 1;
+}
+
+.diagnosis-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.diagnosis-body {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.diagnosis-item.warning .diagnosis-icon { color: var(--color-warning); }
+.diagnosis-item.alert .diagnosis-icon { color: var(--color-alert); }
+.diagnosis-item.success .diagnosis-icon { color: var(--color-success); }
+
+/* ==========================================================================
+   Modals
+   ========================================================================== */
+
+.modal {
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-lg);
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 0;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: var(--text-2xl);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.modal-body {
+  padding: var(--space-5);
+  overflow-y: auto;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.form-group label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  min-height: 44px;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: var(--shadow-focus);
+}
+
+.form-row {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   Import Modal
+   ========================================================================== */
+
+.import-options {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.import-type {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: pointer;
+}
+
+.import-type input {
+  accent-color: var(--color-primary);
+}
+
+.import-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.import-preview {
+  padding: var(--space-4);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.import-preview h4 {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.import-warnings {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-warning-light);
+  border-radius: var(--radius-sm);
+  color: var(--color-warning-text);
+  font-size: var(--text-sm);
+}
+
+.import-result {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+.import-result.success {
+  background: var(--color-success-light);
+  color: var(--color-success-text);
+}
+
+.import-result.error {
+  background: var(--color-alert-light);
+  color: var(--color-alert-text);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+  padding: var(--space-4);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+.last-updated {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Loading States (Skeleton)
+   ========================================================================== */
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-tertiary) 25%, var(--bg-hover) 50%, var(--bg-tertiary) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+    background: var(--bg-tertiary);
+  }
+}
+
+.kpi-card.skeleton .kpi-label,
+.kpi-card.skeleton .kpi-value,
+.kpi-card.skeleton .kpi-sub {
+  height: 1em;
+}
+
+.funnel-step.skeleton .funnel-value,
+.funnel-step.skeleton .funnel-label,
+.funnel-step.skeleton .funnel-rate {
+  height: 1em;
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .header, .tabs, .footer, .modal, .btn, .control-row {
+    display: none !important;
+  }
+  .main { padding: 0; max-width: none; }
+  .tab-panel { display: block !important; }
+  .table-container { overflow: visible; }
+  .table-container::after { display: none; }
+  .data-table th { position: static; }
+  .chart-container { page-break-inside: avoid; }
+  body { background: white; color: black; }
+}
+
+/* ==========================================================================
+   Scrollbar Tokens
+   ========================================================================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--border-color-strong);
+}
+
+/* ==========================================================================
+   SVG Symbols (SIG-UI-018)
+   ========================================================================== */
+
+.svg-symbols {
+  display: none;
+}
+
+</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-brand">
+        <svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M18 20V10M12 20V4M6 20v-6"/>
+        </svg>
+        <span class="logo-text">Content Signal</span>
+        <span class="badge" id="data-badge">Dados de demonstração</span>
+      </div>
+      <div class="header-controls">
+        <div class="period-selector">
+          <label for="period-select" class="sr-only">Período de análise</label>
+          <select id="period-select" aria-label="Período de análise">
+            <option value="7d">Últimos 7 dias</option>
+            <option value="30d" selected>Últimos 30 dias</option>
+            <option value="90d">Últimos 90 dias</option>
+            <option value="custom">Personalizado</option>
+          </select>
+        </div>
+        <div class="import-buttons">
+          <button type="button" class="btn btn-secondary" id="import-organic" aria-label="Importar CSV orgânico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Atualizar dados orgânicos
+          </button>
+          <button type="button" class="btn btn-secondary" id="import-ads" aria-label="Importar CSV de anúncios">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Atualizar dados de anúncios
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Abas principais">
+    <button role="tab" aria-selected="false" aria-controls="panel-diagnostico" id="tab-diagnostico" class="tab-btn" data-tab="diagnostico">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Diagnóstico
+    </button>
+    <button role="tab" aria-selected="false" aria-controls="panel-editoriais" id="tab-editoriais" class="tab-btn" data-tab="editoriais">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Linhas editoriais
+    </button>
+    <button role="tab" aria-selected="true" aria-controls="panel-ads" id="tab-ads" class="tab-btn active" data-tab="ads">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Meta Ads
+    </button>
+  </nav>
+
+  <main class="main">
+    <!-- ABA 1: DIAGNÓSTICO (oculta) -->
+    <section role="tabpanel" id="panel-diagnostico" aria-labelledby="tab-diagnostico" class="tab-panel" hidden>
+      <div class="panel-header">
+        <h1>Diagnóstico</h1>
+        <p class="panel-subtitle">O que está funcionando, o que precisa de ajuste e onde está o gargalo do funil</p>
+      </div>
+      <p style="color: var(--text-muted); padding: var(--space-6); text-align: center;">Aba Diagnóstico — use a navegação para acessar</p>
+    </section>
+
+    <!-- ABA 2: LINHAS EDITORIAIS (oculta) -->
+    <section role="tabpanel" id="panel-editoriais" aria-labelledby="tab-editoriais" class="tab-panel" hidden>
+      <div class="panel-header">
+        <h1>Linhas editoriais</h1>
+        <p class="panel-subtitle">Quais linhas de conteúdo devo priorizar para atrair, qualificar e converter</p>
+      </div>
+      <p style="color: var(--text-muted); padding: var(--space-6); text-align: center;">Aba Linhas Editoriais — use a navegação para acessar</p>
+    </section>
+
+    <!-- ABA 3: META ADS (ATIVA) -->
+    <section role="tabpanel" id="panel-ads" aria-labelledby="tab-ads" class="tab-panel active">
+      <div class="panel-header">
+        <h1>Meta Ads</h1>
+        <p class="panel-subtitle">Quanto estou investindo, o que está funcionando e quais criativos entregam melhor resultado</p>
+      </div>
+
+      <!-- 1. KPIs PRINCIPAIS -->
+      <section class="section" aria-labelledby="kpis-ads-title">
+        <h2 id="kpis-ads-title" class="section-title">Indicadores principais</h2>
+        <div class="kpi-grid">
+          <div class="kpi-card primary">
+            <div class="kpi-label">Gasto total</div>
+            <div class="kpi-value">R$ 12.450</div>
+            <div class="kpi-sub positive">+18% vs período anterior</div>
+          </div>
+          <div class="kpi-card success">
+            <div class="kpi-label">CPM médio</div>
+            <div class="kpi-value">R$ 8,45</div>
+            <div class="kpi-sub positive">-5% vs período anterior</div>
+          </div>
+          <div class="kpi-card warning">
+            <div class="kpi-label">CPC médio</div>
+            <div class="kpi-value">R$ 0,68</div>
+            <div class="kpi-sub negative">+12% vs período anterior</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">CTR médio</div>
+            <div class="kpi-value">1.24%</div>
+            <div class="kpi-sub positive">+0.15pp vs período anterior</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">ROAS</div>
+            <div class="kpi-value">3.2x</div>
+            <div class="kpi-sub negative">-0.4x vs período anterior</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Conversões</div>
+            <div class="kpi-value">187</div>
+            <div class="kpi-sub positive">+22% vs período anterior</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. FUNIL DE ANÚNCIOS -->
+      <section class="section" aria-labelledby="funnel-ads-title">
+        <h2 id="funnel-ads-title" class="section-title">Funil de anúncios</h2>
+        <div class="funnel-container">
+          <div class="funnel-step">
+            <div class="funnel-value">1.2M</div>
+            <div class="funnel-label">Impressões</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value">14.9K</div>
+            <div class="funnel-label">Cliques</div>
+            <div class="funnel-rate positive">1.24%</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value">2.1K</div>
+            <div class="funnel-label">Landing Page Views</div>
+            <div class="funnel-rate positive">14.1%</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value">187</div>
+            <div class="funnel-label">Conversões</div>
+            <div class="funnel-rate positive">8.9%</div>
+          </div>
+        </div>
+        <p class="funnel-note"><span class="manual-badge">Manual</span> Landing Page Views e Conversões requerem pixel configurado</p>
+      </section>
+
+      <!-- 3. TENDÊNCIA DE GASTO E CPM -->
+      <section class="section" aria-labelledby="trend-ads-title">
+        <h2 id="trend-ads-title" class="section-title">Tendência de gasto e CPM</h2>
+        <div class="charts-row">
+          <div class="chart-container">
+            <h3>Gasto diário (últimos 30 dias)</h3>
+            <canvas id="chart-ads-spend" aria-label="Gráfico de linha: gasto diário em reais"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>CPM diário (últimos 30 dias)</h3>
+            <canvas id="chart-ads-cpm" aria-label="Gráfico de linha: CPM diário em reais"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. DESEMPENHO POR CAMPANA -->
+      <section class="section" aria-labelledby="campanhas-title">
+        <h2 id="campanhas-title" class="section-title">Desempenho por campanha</h2>
+        <div class="control-row">
+          <div class="control-group">
+            <label for="campaign-filter-objective">Objetivo:</label>
+            <select id="campaign-filter-objective" aria-label="Filtrar campanhas por objetivo">
+              <option value="">Todos</option>
+              <option value="OUTCOME_SALES">Vendas</option>
+              <option value="OUTCOME_LEADS">Leads</option>
+              <option value="OUTCOME_TRAFFIC">Tráfego</option>
+              <option value="OUTCOME_ENGAGEMENT">Engajamento</option>
+              <option value="OUTCOME_AWARENESS">Reconhecimento</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="campaign-filter-status">Status:</label>
+            <select id="campaign-filter-status" aria-label="Filtrar campanhas por status">
+              <option value="">Todos</option>
+              <option value="ACTIVE">Ativas</option>
+              <option value="PAUSED">Pausadas</option>
+              <option value="DELETED">Excluídas</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-container">
+          <table id="table-campaigns" class="data-table">
+            <thead>
+              <tr>
+                <th>Campanha</th>
+                <th>Objetivo</th>
+                <th>Status</th>
+                <th>Gasto</th>
+                <th>Impressões</th>
+                <th>Cliques</th>
+                <th>CTR</th>
+                <th>CPC</th>
+                <th>CPM</th>
+                <th>Conversões</th>
+                <th>CPA</th>
+                <th>ROAS</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Black Friday - Produtos</strong></td>
+                <td>Vendas</td>
+                <td><span class="badge badge-status-published">Ativa</span></td>
+                <td class="numeric">R$ 4.200</td>
+                <td class="numeric">420K</td>
+                <td class="numeric">5.8K</td>
+                <td class="numeric">1.38%</td>
+                <td class="numeric">R$ 0,72</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">87</td>
+                <td class="numeric">R$ 48,27</td>
+                <td class="numeric">3.8x</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Lançamento Curso Q4</strong></td>
+                <td>Leads</td>
+                <td><span class="badge badge-status-published">Ativa</span></td>
+                <td class="numeric">R$ 3.800</td>
+                <td class="numeric">380K</td>
+                <td class="numeric">4.2K</td>
+                <td class="numeric">1.11%</td>
+                <td class="numeric">R$ 0,90</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">64</td>
+                <td class="numeric">R$ 59,37</td>
+                <td class="numeric">2.1x</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Reconhecimento de Marca</strong></td>
+                <td>Reconhecimento</td>
+                <td><span class="badge badge-status-published">Ativa</span></td>
+                <td class="numeric">R$ 2.100</td>
+                <td class="numeric">280K</td>
+                <td class="numeric">2.1K</td>
+                <td class="numeric">0.75%</td>
+                <td class="numeric">R$ 1,00</td>
+                <td class="numeric">R$ 7,50</td>
+                <td class="numeric">12</td>
+                <td class="numeric">R$ 175,00</td>
+                <td class="numeric">0.8x</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Retargeting Carrinho</strong></td>
+                <td>Vendas</td>
+                <td><span class="badge badge-status-published">Ativa</span></td>
+                <td class="numeric">R$ 1.500</td>
+                <td class="numeric">95K</td>
+                <td class="numeric">1.8K</td>
+                <td class="numeric">1.89%</td>
+                <td class="numeric">R$ 0,83</td>
+                <td class="numeric">R$ 15,79</td>
+                <td class="numeric">24</td>
+                <td class="numeric">R$ 62,50</td>
+                <td class="numeric">4.2x</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Engajamento Orgânico</strong></td>
+                <td>Engajamento</td>
+                <td><span class="badge badge-status-paused">Pausada</span></td>
+                <td class="numeric">R$ 850</td>
+                <td class="numeric">45K</td>
+                <td class="numeric">1.0K</td>
+                <td class="numeric">2.22%</td>
+                <td class="numeric">R$ 0,85</td>
+                <td class="numeric">R$ 18,89</td>
+                <td class="numeric">0</td>
+                <td class="numeric">—</td>
+                <td class="numeric">—</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 5. DESEMPENHO POR CONJUNTO DE ANÚNCIOS -->
+      <section class="section" aria-labelledby="adsets-title">
+        <h2 id="adsets-title" class="section-title">Desempenho por conjunto de anúncios</h2>
+        <div class="control-row">
+          <div class="control-group">
+            <label for="adset-filter-campaign">Campanha:</label>
+            <select id="adset-filter-campaign" aria-label="Filtrar conjuntos por campanha">
+              <option value="">Todas</option>
+              <option value="bf-produtos">Black Friday - Produtos</option>
+              <option value="lancamento-q4">Lançamento Curso Q4</option>
+              <option value="brand-awareness">Reconhecimento de Marca</option>
+              <option value="retargeting-cart">Retargeting Carrinho</option>
+              <option value="engagement-organic">Engajamento Orgânico</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-container">
+          <table id="table-adsets" class="data-table">
+            <thead>
+              <tr>
+                <th>Conjunto de anúncios</th>
+                <th>Campanha</th>
+                <th>Público</th>
+                <th>Status</th>
+                <th>Gasto</th>
+                <th>Impressões</th>
+                <th>Cliques</th>
+                <th>CTR</th>
+                <th>CPC</th>
+                <th>CPM</th>
+                <th>Conversões</th>
+                <th>CPA</th>
+                <th>ROAS</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>BF - Lookalike 1%</strong></td>
+                <td>Black Friday - Produtos</td>
+                <td>Lookalike 1% (Compradores)</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 1.800</td>
+                <td class="numeric">180K</td>
+                <td class="numeric">2.4K</td>
+                <td class="numeric">1.33%</td>
+                <td class="numeric">R$ 0,75</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">42</td>
+                <td class="numeric">R$ 42,85</td>
+                <td class="numeric">4.1x</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>BF - Interesses Tech</strong></td>
+                <td>Black Friday - Produtos</td>
+                <td>Interesses: Tech, SaaS, Produtividade</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 1.500</td>
+                <td class="numeric">150K</td>
+                <td class="numeric">2.1K</td>
+                <td class="numeric">1.40%</td>
+                <td class="numeric">R$ 0,71</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">30</td>
+                <td class="numeric">R$ 50,00</td>
+                <td class="numeric">3.6x</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>BF - Retargeting Site</strong></td>
+                <td>Black Friday - Produtos</td>
+                <td>Visitantes site 30d</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 900</td>
+                <td class="numeric">90K</td>
+                <td class="numeric">1.3K</td>
+                <td class="numeric">1.44%</td>
+                <td class="numeric">R$ 0,69</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">15</td>
+                <td class="numeric">R$ 60,00</td>
+                <td class="numeric">3.9x</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Lançamento - Broad</strong></td>
+                <td>Lançamento Curso Q4</td>
+                <td>Broad (otimização Leads)</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 2.200</td>
+                <td class="numeric">220K</td>
+                <td class="numeric">2.5K</td>
+                <td class="numeric">1.14%</td>
+                <td class="numeric">R$ 0,88</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">38</td>
+                <td class="numeric">R$ 57,89</td>
+                <td class="numeric">2.3x</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Lançamento - Lookalike Leads</strong></td>
+                <td>Lançamento Curso Q4</td>
+                <td>Lookalike 1% (Leads qualificados)</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 1.600</td>
+                <td class="numeric">160K</td>
+                <td class="numeric">1.7K</td>
+                <td class="numeric">1.06%</td>
+                <td class="numeric">R$ 0,94</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">26</td>
+                <td class="numeric">R$ 61,53</td>
+                <td class="numeric">1.9x</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. DESEMPENHO POR CRIATIVO -->
+      <section class="section" aria-labelledby="creatives-title">
+        <h2 id="creatives-title" class="section-title">Desempenho por criativo</h2>
+        <div class="control-row">
+          <div class="control-group">
+            <label for="creative-filter-adset">Conjunto de anúncios:</label>
+            <select id="creative-filter-adset" aria-label="Filtrar criativos por conjunto de anúncios">
+              <option value="">Todos</option>
+              <option value="bf-lal-1">BF - Lookalike 1%</option>
+              <option value="bf-interests">BF - Interesses Tech</option>
+              <option value="bf-retargeting">BF - Retargeting Site</option>
+              <option value="lancamento-broad">Lançamento - Broad</option>
+              <option value="lancamento-lal">Lançamento - Lookalike Leads</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="creative-filter-format">Formato:</label>
+            <select id="creative-filter-format" aria-label="Filtrar criativos por formato">
+              <option value="">Todos</option>
+              <option value="VIDEO">Vídeo</option>
+              <option value="CAROUSEL">Carrossel</option>
+              <option value="SINGLE_IMAGE">Imagem única</option>
+              <option value="COLLECTION">Coleção</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-container">
+          <table id="table-creatives" class="data-table">
+            <thead>
+              <tr>
+                <th>Criativo</th>
+                <th>Formato</th>
+                <th>Conjunto</th>
+                <th>Status</th>
+                <th>Gasto</th>
+                <th>Impressões</th>
+                <th>Cliques</th>
+                <th>CTR</th>
+                <th>CPC</th>
+                <th>Conversões</th>
+                <th>CPA</th>
+                <th>ROAS</th>
+                <th>Hook Retenção 3s</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Vídeo Demo Produto v2</strong></td>
+                <td><span class="badge badge-format-reel">Vídeo</span></td>
+                <td>BF - Lookalike 1%</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 850</td>
+                <td class="numeric">85K</td>
+                <td class="numeric">1.2K</td>
+                <td class="numeric">1.41%</td>
+                <td class="numeric">R$ 0,71</td>
+                <td class="numeric">22</td>
+                <td class="numeric">R$ 38,63</td>
+                <td class="numeric">4.5x</td>
+                <td class="numeric">42%</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Carrossel Benefícios v1</strong></td>
+                <td><span class="badge badge-format-carousel">Carrossel</span></td>
+                <td>BF - Lookalike 1%</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 620</td>
+                <td class="numeric">62K</td>
+                <td class="numeric">850</td>
+                <td class="numeric">1.37%</td>
+                <td class="numeric">R$ 0,73</td>
+                <td class="numeric">14</td>
+                <td class="numeric">R$ 44,28</td>
+                <td class="numeric">3.8x</td>
+                <td class="numeric">—</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Imagem Única Oferta BF</strong></td>
+                <td><span class="badge badge-format-photo">Imagem única</span></td>
+                <td>BF - Interesses Tech</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 780</td>
+                <td class="numeric">78K</td>
+                <td class="numeric">1.1K</td>
+                <td class="numeric">1.41%</td>
+                <td class="numeric">R$ 0,71</td>
+                <td class="numeric">18</td>
+                <td class="numeric">R$ 43,33</td>
+                <td class="numeric">4.2x</td>
+                <td class="numeric">—</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Vídeo Depoimento Aluno</strong></td>
+                <td><span class="badge badge-format-reel">Vídeo</span></td>
+                <td>Lançamento - Broad</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 1.200</td>
+                <td class="numeric">120K</td>
+                <td class="numeric">1.4K</td>
+                <td class="numeric">1.17%</td>
+                <td class="numeric">R$ 0,86</td>
+                <td class="numeric">22</td>
+                <td class="numeric">R$ 54,54</td>
+                <td class="numeric">2.4x</td>
+                <td class="numeric">38%</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Carrossel Módulos Curso</strong></td>
+                <td><span class="badge badge-format-carousel">Carrossel</span></td>
+                <td>Lançamento - Lookalike Leads</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 950</td>
+                <td class="numeric">95K</td>
+                <td class="numeric">980</td>
+                <td class="numeric">1.03%</td>
+                <td class="numeric">R$ 0,97</td>
+                <td class="numeric">15</td>
+                <td class="numeric">R$ 63,33</td>
+                <td class="numeric">1.8x</td>
+                <td class="numeric">—</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td><strong>Imagem Brand Awareness</strong></td>
+                <td><span class="badge badge-format-photo">Imagem única</span></td>
+                <td>Reconhecimento de Marca</td>
+                <td><span class="badge badge-status-published">Ativo</span></td>
+                <td class="numeric">R$ 2.100</td>
+                <td class="numeric">280K</td>
+                <td class="numeric">2.1K</td>
+                <td class="numeric">0.75%</td>
+                <td class="numeric">R$ 1,00</td>
+                <td class="numeric">12</td>
+                <td class="numeric">R$ 175,00</td>
+                <td class="numeric">0.8x</td>
+                <td class="numeric">—</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 7. DESEMPENHO POR POSICIONAMENTO -->
+      <section class="section" aria-labelledby="placements-title">
+        <h2 id="placements-title" class="section-title">Desempenho por posicionamento</h2>
+        <div class="charts-row">
+          <div class="chart-container">
+            <h3>Gasto por posicionamento</h3>
+            <canvas id="chart-ads-placement-spend" aria-label="Gráfico de pizza: gasto por posicionamento"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>ROAS por posicionamento</h3>
+            <canvas id="chart-ads-placement-roas" aria-label="Gráfico de barras: ROAS por posicionamento"></canvas>
+          </div>
+        </div>
+        <div class="table-container">
+          <table id="table-placements" class="data-table">
+            <thead>
+              <tr>
+                <th>Posicionamento</th>
+                <th>Gasto</th>
+                <th>Impressões</th>
+                <th>Cliques</th>
+                <th>CTR</th>
+                <th>CPC</th>
+                <th>CPM</th>
+                <th>Conversões</th>
+                <th>CPA</th>
+                <th>ROAS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Feed do Facebook</td>
+                <td class="numeric">R$ 4.200</td>
+                <td class="numeric">420K</td>
+                <td class="numeric">5.8K</td>
+                <td class="numeric">1.38%</td>
+                <td class="numeric">R$ 0,72</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">72</td>
+                <td class="numeric">R$ 58,33</td>
+                <td class="numeric">3.4x</td>
+              </tr>
+              <tr>
+                <td>Feed do Instagram</td>
+                <td class="numeric">R$ 3.800</td>
+                <td class="numeric">380K</td>
+                <td class="numeric">4.5K</td>
+                <td class="numeric">1.18%</td>
+                <td class="numeric">R$ 0,84</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">58</td>
+                <td class="numeric">R$ 65,51</td>
+                <td class="numeric">2.9x</td>
+              </tr>
+              <tr>
+                <td>Stories Instagram</td>
+                <td class="numeric">R$ 2.100</td>
+                <td class="numeric">210K</td>
+                <td class="numeric">2.8K</td>
+                <td class="numeric">1.33%</td>
+                <td class="numeric">R$ 0,75</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">32</td>
+                <td class="numeric">R$ 65,62</td>
+                <td class="numeric">3.1x</td>
+              </tr>
+              <tr>
+                <td>Reels Instagram</td>
+                <td class="numeric">R$ 1.400</td>
+                <td class="numeric">140K</td>
+                <td class="numeric">1.2K</td>
+                <td class="numeric">0.86%</td>
+                <td class="numeric">R$ 1,17</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">18</td>
+                <td class="numeric">R$ 77,77</td>
+                <td class="numeric">2.5x</td>
+              </tr>
+              <tr>
+                <td>Audience Network</td>
+                <td class="numeric">R$ 950</td>
+                <td class="numeric">95K</td>
+                <td class="numeric">600</td>
+                <td class="numeric">0.63%</td>
+                <td class="numeric">R$ 1,58</td>
+                <td class="numeric">R$ 10,00</td>
+                <td class="numeric">7</td>
+                <td class="numeric">R$ 135,71</td>
+                <td class="numeric">1.4x</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 8. SUGESTÕES DE OTIMIZAÇÃO -->
+      <section class="section" aria-labelledby="optimization-title">
+        <h2 id="optimization-title" class="section-title">Sugestões de otimização</h2>
+        <div id="ads-optimization-suggestions" class="suggestions-list">
+          <div class="suggestion-card primary">
+            <div class="suggestion-title">🎯 Reduzir orçamento em "Reconhecimento de Marca" (ROAS 0.8x)</div>
+                <div class="suggestion-body">Esta campanha tem ROAS abaixo de 1.0. Realoque R$ 1.500 para "Retargeting Carrinho" (ROAS 4.2x) ou "BF - Lookalike 1%" (ROAS 4.1x).</div>
+            <div class="suggestion-meta">
+              <span>ROAS atual: 0.8x</span>
+              <span>Gasto: R$ 2.100</span>
+              <span>Realocar para: Retargeting</span>
+            </div>
+          </div>
+          <div class="suggestion-card success">
+            <div class="suggestion-title">📈 Escalar "BF - Lookalike 1%" — melhor CPA (R$ 42,85)</div>
+            <div class="suggestion-body">Menor CPA entre todos os conjuntos ativos. Aumente orçamento diário em 20% e monitore frequência (atual ~2.1).</div>
+            <div class="suggestion-meta">
+              <span>CPA: R$ 42,85</span>
+              <span>ROAS: 4.1x</span>
+              <span>Frequência: 2.1</span>
+            </div>
+          </div>
+          <div class="suggestion-card warning">
+            <div class="suggestion-title">⚠️ "Imagem Brand Awareness" — CTR 0.75%, CPC R$ 1,00</div>
+            <div class="suggestion-body">Criativo de reconhecimento com CTR muito baixo. Considere pausar e testar vídeo curto (15s) com hook visual nos primeiros 3s.</div>
+            <div class="suggestion-meta">
+              <span>CTR: 0.75%</span>
+              <span>Gasto: R$ 2.100</span>
+              <span>Testar: Vídeo 15s Reels</span>
+            </div>
+          </div>
+          <div class="suggestion-card">
+            <div class="suggestion-title">🧪 Testar novo hook no "Vídeo Depoimento Aluno"</div>
+            <div class="suggestion-body">Retenção em 3s de 38% é boa, mas pode melhorar. Teste abertura com "Erro que cometi..." vs "Resultado em 30 dias".</div>
+            <div class="suggestion-meta">
+              <span>Retenção 3s: 38%</span>
+              <span>CTR: 1.17%</span>
+              <span>Teste A/B: 2 hooks</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. BIBLIOTECA DE CRIATIVOS -->
+      <section class="section" aria-labelledby="creative-library-title">
+        <h2 id="creative-library-title" class="section-title">Biblioteca de criativos</h2>
+        <div class="editorial-header">
+          <h3>Criativos cadastrados</h3>
+          <button type="button" class="btn btn-primary" id="add-creative">+ Novo criativo</button>
+        </div>
+        <div class="control-row">
+          <select id="creative-library-filter-campaign" aria-label="Filtrar por campanha">
+            <option value="">Todas as campanhas</option>
+            <option value="bf-produtos">Black Friday - Produtos</option>
+            <option value="lancamento-q4">Lançamento Curso Q4</option>
+            <option value="brand-awareness">Reconhecimento de Marca</option>
+            <option value="retargeting-cart">Retargeting Carrinho</option>
+          </select>
+          <select id="creative-library-filter-format" aria-label="Filtrar por formato">
+            <option value="">Todos os formatos</option>
+            <option value="VIDEO">Vídeo</option>
+            <option value="CAROUSEL">Carrossel</option>
+            <option value="SINGLE_IMAGE">Imagem única</option>
+            <option value="COLLECTION">Coleção</option>
+          </select>
+          <select id="creative-library-filter-status" aria-label="Filtrar por status">
+            <option value="">Todos os status</option>
+            <option value="idea">Ideia</option>
+            <option value="production">Em produção</option>
+            <option value="active">Ativo</option>
+            <option value="paused">Pausado</option>
+            <option value="archived">Arquivado</option>
+          </select>
+          <select id="creative-library-filter-performance" aria-label="Filtrar por performance">
+            <option value="">Todas</option>
+            <option value="high">Alta (ROAS ≥ 3x)</option>
+            <option value="medium">Média (ROAS 1-3x)</option>
+            <option value="low">Baixa (ROAS < 1x)</option>
+          </select>
+        </div>
+        <div class="table-container">
+          <table id="table-creative-library" class="data-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Campanha</th>
+                <th>Formato</th>
+                <th>Hook / Conceito</th>
+                <th>Status</th>
+                <th>Performance</th>
+                <th>Gasto</th>
+                <th>ROAS</th>
+                <th>Observações</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Vídeo Demo Produto v2</td>
+                <td>Black Friday - Produtos</td>
+                <td><span class="badge badge-format-reel">Vídeo</span></td>
+                <td>Demo rápida: "Veja como economizo 10h/semana"</td>
+                <td><span class="badge badge-status-active">Ativo</span></td>
+                <td><span class="badge badge-ad-high">Alta</span></td>
+                <td class="numeric">R$ 850</td>
+                <td class="numeric">4.5x</td>
+                <td>Melhor conversão BF</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>Carrossel Benefícios v1</td>
+                <td>Black Friday - Produtos</td>
+                <td><span class="badge badge-format-carousel">Carrossel</span></td>
+                <td>3 benefícios principais + prova social</td>
+                <td><span class="badge badge-status-active">Ativo</span></td>
+                <td><span class="badge badge-ad-high">Alta</span></td>
+                <td class="numeric">R$ 620</td>
+                <td class="numeric">3.8x</td>
+                <td>CTR consistente</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>Imagem Única Oferta BF</td>
+                <td>Black Friday - Produtos</td>
+                <td><span class="badge badge-format-photo">Imagem única</span></td>
+                <td>"50% OFF só hoje" + timer</td>
+                <td><span class="badge badge-status-active">Ativo</span></td>
+                <td><span class="badge badge-ad-high">Alta</span></td>
+                <td class="numeric">R$ 780</td>
+                <td class="numeric">4.2x</td>
+                <td>Urgência visual</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>Vídeo Depoimento Aluno</td>
+                <td>Lançamento Curso Q4</td>
+                <td><span class="badge badge-format-reel">Vídeo</span></td>
+                <td>"De zero a R$ 10K/mês em 90 dias"</td>
+                <td><span class="badge badge-status-active">Ativo</span></td>
+                <td><span class="badge badge-ad-medium">Média</span></td>
+                <td class="numeric">R$ 1.200</td>
+                <td class="numeric">2.4x</td>
+                <td>Retenção 3s: 38%</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>Carrossel Módulos Curso</td>
+                <td>Lançamento Curso Q4</td>
+                <td><span class="badge badge-format-carousel">Carrossel</span></td>
+                <td>6 módulos + bônus + garantia</td>
+                <td><span class="badge badge-status-active">Ativo</span></td>
+                <td><span class="badge badge-ad-medium">Média</span></td>
+                <td class="numeric">R$ 950</td>
+                <td class="numeric">1.8x</td>
+                <td>Eduacional</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>Imagem Brand Awareness</td>
+                <td>Reconhecimento de Marca</td>
+                <td><span class="badge badge-format-photo">Imagem única</span></td>
+                <td>Logo + slogan + CTA "Saiba mais"</td>
+                <td><span class="badge badge-status-active">Ativo</span></td>
+                <td><span class="badge badge-ad-low">Baixa</span></td>
+                <td class="numeric">R$ 2.100</td>
+                <td class="numeric">0.8x</td>
+                <td>Pausar / testar vídeo</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>Vídeo Retargeting Carrinho</td>
+                <td>Retargeting Carrinho</td>
+                <td><span class="badge badge-format-reel">Vídeo</span></td>
+                <td>"Esqueceu algo? 10% OFF nas próximas 2h"</td>
+                <td><span class="badge badge-status-active">Ativo</span></td>
+                <td><span class="badge badge-ad-high">Alta</span></td>
+                <td class="numeric">R$ 1.500</td>
+                <td class="numeric">4.2x</td>
+                <td>Melhor ROAS geral</td>
+                <td><button class="btn-icon" aria-label="Ver detalhes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Content Signal — Dashboard local de análise. Dados permanecem no seu navegador.</p>
+    <p id="last-updated" class="last-updated">Nenhum carregamento realizado</p>
+  </footer>
+
+  <!-- SVGs -->
+  <svg class="svg-symbols" aria-hidden="true">
+    <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </symbol>
+  </svg>
+
+  <script>
+    // Simulate demo data rendering for measurements
+    document.addEventListener('DOMContentLoaded', () => {
+      // Ensure all tables have data for measurement
+      const tables = document.querySelectorAll('.data-table tbody');
+      tables.forEach(tbody => {
+        if (tbody.children.length === 0) {
+          const cols = tbody.closest('table').querySelectorAll('thead th').length;
+          const tr = document.createElement('tr');
+          for (let i = 0; i < cols; i++) {
+            const td = document.createElement('td');
+            td.textContent = '—';
+            tr.appendChild(td);
+          }
+          tbody.appendChild(tr);
+        }
+      });
+
+      // Ensure KPI grids have content
+      const kpiGrids = document.querySelectorAll('.kpi-grid');
+      kpiGrids.forEach(grid => {
+        if (grid.children.length === 0) {
+          for (let i = 0; i < 4; i++) {
+            const card = document.createElement('div');
+            card.className = 'kpi-card';
+            card.innerHTML = `
+              <div class="kpi-label">KPI ${i + 1}</div>
+              <div class="kpi-value">1.234</div>
+              <div class="kpi-sub positive">+12% vs anterior</div>
+            `;
+            grid.appendChild(card);
+          }
+        }
+      });
+
+      // Ensure funnels have content
+      const funnels = document.querySelectorAll('.funnel-container');
+      funnels.forEach(funnel => {
+        if (funnel.children.length <= 1) { // only arrows
+          funnel.innerHTML = `
+            <div class="funnel-step">
+              <div class="funnel-value">100K</div>
+              <div class="funnel-label">Alcance</div>
+            </div>
+            <div class="funnel-arrow" aria-hidden="true">→</div>
+            <div class="funnel-step">
+              <div class="funnel-value">5.2K</div>
+              <div class="funnel-label">Visitas</div>
+              <div class="funnel-rate positive">5.2%</div>
+            </div>
+            <div class="funnel-arrow" aria-hidden="true">→</div>
+            <div class="funnel-step">
+              <div class="funnel-value">1.1K</div>
+              <div class="funnel-label">Cliques</div>
+              <div class="funnel-rate positive">21.2%</div>
+            </div>
+          `;
+        }
+      });
+
+      // Ensure charts have canvas
+      const charts = document.querySelectorAll('canvas');
+      charts.forEach(canvas => {
+        if (!canvas.width) {
+          canvas.width = 400;
+          canvas.height = 280;
+          const ctx = canvas.getContext('2d');
+          ctx.fillStyle = 'var(--bg-tertiary)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.font = '14px Inter, system-ui';
+          ctx.fillStyle = 'var(--text-muted)';
+          ctx.textAlign = 'center';
+          ctx.fillText('Chart placeholder', canvas.width / 2, canvas.height / 2);
+        }
+      });
+
+      // Ensure diagnosis has content
+      const diagnosis = document.querySelector('.diagnosis-list');
+      if (diagnosis && diagnosis.children.length === 0) {
+        diagnosis.innerHTML = `
+          <div class="diagnosis-item">
+            <svg class="diagnosis-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            <div class="diagnosis-content">
+              <div class="diagnosis-title">Alcance estagnado</div>
+              <div class="diagnosis-body">O alcance médio dos últimos 7 dias caiu 12% vs período anterior. Considere variar formatos.</div>
+            </div>
+          </div>
+          <div class="diagnosis-item success">
+            <svg class="diagnosis-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div class="diagnosis-content">
+              <div class="diagnosis-title">Taxa de salvamento em alta</div>
+              <div class="diagnosis-body">A taxa de salvamento subiu 0.3pp — indicador forte de intenção. Mantenha CTAs de salvamento.</div>
+            </div>
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

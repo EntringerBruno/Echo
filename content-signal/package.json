@@ -1,0 +1,20 @@
+{
+  "name": "content-signal",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <img src=\"https://img.shields.io/badge/status-v1.0-blue\" alt=\"Status\">   <img src=\"https://img.shields.io/badge/license-MIT-green\" alt=\"License\">   <img src=\"https://img.shields.io/badge/privacy-local--only-orange\" alt=\"Privacy\">   <img src=\"https://img.shields.io/badge/stack-vanilla%20JS%20%2B%20CSS-blueviolet\" alt=\"Stack\"> </p>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "playwright": "^1.65.1"
+  }
+}

@@ -1,0 +1,1653 @@
+{
+  "timestamp": "2026-11-15T17:49:32.354Z",
+  "viewports": {
+    "desktop-1440": {
+      "tabs": {},
+      "contrast": {
+        "tab-diagnostico": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        },
+        "tab-editoriais": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        },
+        "tab-ads": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        }
+      },
+      "fonts": {
+        "tab-diagnostico": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        },
+        "tab-editoriais": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        },
+        "tab-ads": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        }
+      }
+    },
+    "desktop-1024": {
+      "tabs": {},
+      "contrast": {
+        "tab-diagnostico": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        },
+        "tab-editoriais": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        },
+        "tab-ads": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        }
+      },
+      "fonts": {
+        "tab-diagnostico": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        },
+        "tab-editoriais": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        },
+        "tab-ads": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        }
+      }
+    },
+    "tablet-768": {
+      "tabs": {},
+      "contrast": {
+        "tab-diagnostico": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        },
+        "tab-editoriais": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        },
+        "tab-ads": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        }
+      },
+      "fonts": {
+        "tab-diagnostico": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        },
+        "tab-editoriais": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        },
+        "tab-ads": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        }
+      }
+    },
+    "mobile-375": {
+      "tabs": {},
+      "contrast": {
+        "tab-diagnostico": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        },
+        "tab-editoriais": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        },
+        "tab-ads": {
+          "tab-inactive": {
+            "contrast": 3.4834574287543076,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn",
+            "sampleCount": 2
+          },
+          "tab-active": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 1
+          },
+          "heading-primary": {
+            "contrast": 16.342255904071042,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(250,250,250)",
+            "selector": ".section-title",
+            "elementTag": "H2",
+            "elementClass": "section-title",
+            "sampleCount": 16
+          },
+          "button-secondary": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".btn-secondary",
+            "elementTag": "BUTTON",
+            "elementClass": "btn btn-secondary",
+            "sampleCount": 6
+          },
+          "badge": {
+            "contrast": 6.367237188363559,
+            "fg": "rgb(146,64,14)",
+            "bg": "rgb(254,243,199)",
+            "selector": ".badge",
+            "elementTag": "SPAN",
+            "elementClass": "badge",
+            "sampleCount": 1
+          },
+          "tab-btn-text": {
+            "contrast": 5.168555560022562,
+            "fg": "rgb(37,99,235)",
+            "bg": "rgb(255,255,255)",
+            "selector": ".tab-btn",
+            "elementTag": "BUTTON",
+            "elementClass": "tab-btn active",
+            "sampleCount": 3
+          },
+          "funnel-label": {
+            "contrast": 7.965029072913924,
+            "fg": "rgb(74,74,90)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-label",
+            "elementTag": "DIV",
+            "elementClass": "funnel-label",
+            "sampleCount": 12
+          },
+          "funnel-rate": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": ".funnel-rate",
+            "elementTag": "DIV",
+            "elementClass": "funnel-rate",
+            "sampleCount": 10
+          },
+          "table-header": {
+            "contrast": 3.1951553840124225,
+            "fg": "rgb(136,136,153)",
+            "bg": "rgb(245,245,245)",
+            "selector": "th",
+            "elementTag": "TH",
+            "elementClass": "",
+            "sampleCount": 109
+          },
+          "select-text": {
+            "contrast": 17.057478355515048,
+            "fg": "rgb(26,26,46)",
+            "bg": "rgb(255,255,255)",
+            "selector": "select",
+            "elementTag": "SELECT",
+            "elementClass": "",
+            "sampleCount": 16
+          },
+          "tab-inactive-debug": {
+            "color": "rgb(136, 136, 153)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "parentBg": "rgb(255, 255, 255)",
+            "grandParentBg": "rgb(250, 250, 250)"
+          }
+        }
+      },
+      "fonts": {
+        "tab-diagnostico": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        },
+        "tab-editoriais": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        },
+        "tab-ads": {
+          "documentFonts": {},
+          "canvasFontUsage": [],
+          "chartsJsFontStrings": [],
+          "computedFonts": {
+            "body": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            "section-title": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "17px",
+              "fontWeight": "600"
+            },
+            "tab-btn": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "funnel-label": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "13px",
+              "fontWeight": "500"
+            },
+            "table-th": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "600"
+            },
+            "badge": {
+              "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+              "fontSize": "11px",
+              "fontWeight": "500"
+            }
+          }
+        }
+      }
+    }
+  }
+}
