@@ -1,0 +1,3276 @@
+{
+  "timestamp": "2026-11-15T14:04:48.147Z",
+  "viewports": {
+    "desktop-1440": {
+      "tabs": {
+        "tab-diagnostico": "desktop-1440-tab-diagnostico.png",
+        "tab-editoriais": "desktop-1440-tab-editoriais.png",
+        "tab-ads": "desktop-1440-tab-ads.png"
+      },
+      "states": [
+        {
+          "state": "loading",
+          "file": "desktop-1440-loading.png"
+        },
+        {
+          "state": "empty",
+          "file": "NOT_OBSERVED",
+          "reason": "Requires clearing localStorage/data"
+        },
+        {
+          "state": "error",
+          "file": "NOT_OBSERVED",
+          "reason": "Requires mocking failed CSV parse"
+        },
+        {
+          "state": "focus-first",
+          "file": "desktop-1440-focus-first.png"
+        },
+        {
+          "state": "focus-multiple",
+          "file": "desktop-1440-focus-multiple.png"
+        },
+        {
+          "state": "selected",
+          "file": "NOT_OBSERVED",
+          "reason": "No clickable row found"
+        }
+      ]
+    },
+    "desktop-1024": {
+      "tabs": {
+        "tab-diagnostico": "desktop-1024-tab-diagnostico.png",
+        "tab-editoriais": "desktop-1024-tab-editoriais.png",
+        "tab-ads": "desktop-1024-tab-ads.png"
+      },
+      "states": [
+        {
+          "state": "loading",
+          "file": "desktop-1024-loading.png"
+        },
+        {
+          "state": "empty",
+          "file": "NOT_OBSERVED",
+          "reason": "Requires clearing localStorage/data"
+        },
+        {
+          "state": "error",
+          "file": "NOT_OBSERVED",
+          "reason": "Requires mocking failed CSV parse"
+        },
+        {
+          "state": "focus-first",
+          "file": "desktop-1024-focus-first.png"
+        },
+        {
+          "state": "focus-multiple",
+          "file": "desktop-1024-focus-multiple.png"
+        },
+        {
+          "state": "selected",
+          "file": "NOT_OBSERVED",
+          "reason": "No clickable row found"
+        }
+      ]
+    },
+    "tablet-768": {
+      "tabs": {
+        "tab-diagnostico": "tablet-768-tab-diagnostico.png",
+        "tab-editoriais": "tablet-768-tab-editoriais.png",
+        "tab-ads": "tablet-768-tab-ads.png"
+      },
+      "states": [
+        {
+          "state": "loading",
+          "file": "tablet-768-loading.png"
+        },
+        {
+          "state": "empty",
+          "file": "NOT_OBSERVED",
+          "reason": "Requires clearing localStorage/data"
+        },
+        {
+          "state": "error",
+          "file": "NOT_OBSERVED",
+          "reason": "Requires mocking failed CSV parse"
+        },
+        {
+          "state": "focus-first",
+          "file": "tablet-768-focus-first.png"
+        },
+        {
+          "state": "focus-multiple",
+          "file": "tablet-768-focus-multiple.png"
+        },
+        {
+          "state": "selected",
+          "file": "NOT_OBSERVED",
+          "reason": "No clickable row found"
+        }
+      ]
+    },
+    "mobile-375": {
+      "tabs": {
+        "tab-diagnostico": "mobile-375-tab-diagnostico.png",
+        "tab-editoriais": "mobile-375-tab-editoriais.png",
+        "tab-ads": "mobile-375-tab-ads.png"
+      },
+      "states": [
+        {
+          "state": "loading",
+          "file": "mobile-375-loading.png"
+        },
+        {
+          "state": "empty",
+          "file": "NOT_OBSERVED",
+          "reason": "Requires clearing localStorage/data"
+        },
+        {
+          "state": "error",
+          "file": "NOT_OBSERVED",
+          "reason": "Requires mocking failed CSV parse"
+        },
+        {
+          "state": "focus-first",
+          "file": "mobile-375-focus-first.png"
+        },
+        {
+          "state": "focus-multiple",
+          "file": "mobile-375-focus-multiple.png"
+        },
+        {
+          "state": "selected",
+          "file": "NOT_OBSERVED",
+          "reason": "No clickable row found"
+        }
+      ]
+    }
+  },
+  "contrast": {
+    "desktop-1440": {
+      "heading-primary": {
+        "contrast": null,
+        "fg": "rgb(26,26,46)",
+        "bg": "rgb(0,0,0)",
+        "selector": "h1, h2, .title, .page-title"
+      },
+      "text-primary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(0,0,0)",
+        "selector": "p, .text, .description, td, th"
+      },
+      "button-primary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(245,245,245)",
+        "selector": "button:not(.secondary):not(.ghost), .btn-primary"
+      },
+      "button-secondary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(245,245,245)",
+        "selector": "button.secondary, .btn-secondary, .ghost"
+      },
+      "input-label": {
+        "contrast": null,
+        "fg": "rgb(26,26,46)",
+        "bg": "rgb(0,0,0)",
+        "selector": "label"
+      },
+      "tab-active": {
+        "contrast": null,
+        "fg": "rgb(37,99,235)",
+        "bg": "rgb(255,255,255)",
+        "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]"
+      },
+      "tab-inactive": {
+        "contrast": null,
+        "fg": "rgb(136,136,153)",
+        "bg": "rgb(0,0,0)",
+        "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])"
+      }
+    },
+    "desktop-1024": {
+      "heading-primary": {
+        "contrast": null,
+        "fg": "rgb(26,26,46)",
+        "bg": "rgb(0,0,0)",
+        "selector": "h1, h2, .title, .page-title"
+      },
+      "text-primary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(0,0,0)",
+        "selector": "p, .text, .description, td, th"
+      },
+      "button-primary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(245,245,245)",
+        "selector": "button:not(.secondary):not(.ghost), .btn-primary"
+      },
+      "button-secondary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(245,245,245)",
+        "selector": "button.secondary, .btn-secondary, .ghost"
+      },
+      "input-label": {
+        "contrast": null,
+        "fg": "rgb(26,26,46)",
+        "bg": "rgb(0,0,0)",
+        "selector": "label"
+      },
+      "tab-active": {
+        "contrast": null,
+        "fg": "rgb(37,99,235)",
+        "bg": "rgb(255,255,255)",
+        "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]"
+      },
+      "tab-inactive": {
+        "contrast": null,
+        "fg": "rgb(136,136,153)",
+        "bg": "rgb(0,0,0)",
+        "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])"
+      }
+    },
+    "tablet-768": {
+      "heading-primary": {
+        "contrast": null,
+        "fg": "rgb(26,26,46)",
+        "bg": "rgb(0,0,0)",
+        "selector": "h1, h2, .title, .page-title"
+      },
+      "text-primary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(0,0,0)",
+        "selector": "p, .text, .description, td, th"
+      },
+      "button-primary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(245,245,245)",
+        "selector": "button:not(.secondary):not(.ghost), .btn-primary"
+      },
+      "button-secondary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(245,245,245)",
+        "selector": "button.secondary, .btn-secondary, .ghost"
+      },
+      "input-label": {
+        "contrast": null,
+        "fg": "rgb(26,26,46)",
+        "bg": "rgb(0,0,0)",
+        "selector": "label"
+      },
+      "tab-active": {
+        "contrast": null,
+        "fg": "rgb(37,99,235)",
+        "bg": "rgb(255,255,255)",
+        "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]"
+      },
+      "tab-inactive": {
+        "contrast": null,
+        "fg": "rgb(136,136,153)",
+        "bg": "rgb(0,0,0)",
+        "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])"
+      }
+    },
+    "mobile-375": {
+      "heading-primary": {
+        "contrast": null,
+        "fg": "rgb(26,26,46)",
+        "bg": "rgb(0,0,0)",
+        "selector": "h1, h2, .title, .page-title"
+      },
+      "text-primary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(0,0,0)",
+        "selector": "p, .text, .description, td, th"
+      },
+      "button-primary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(245,245,245)",
+        "selector": "button:not(.secondary):not(.ghost), .btn-primary"
+      },
+      "button-secondary": {
+        "contrast": null,
+        "fg": "rgb(74,74,90)",
+        "bg": "rgb(245,245,245)",
+        "selector": "button.secondary, .btn-secondary, .ghost"
+      },
+      "input-label": {
+        "contrast": null,
+        "fg": "rgb(26,26,46)",
+        "bg": "rgb(0,0,0)",
+        "selector": "label"
+      },
+      "tab-active": {
+        "contrast": null,
+        "fg": "rgb(37,99,235)",
+        "bg": "rgb(255,255,255)",
+        "selector": "[data-tab].active, [data-tab][aria-selected=\"true\"]"
+      },
+      "tab-inactive": {
+        "contrast": null,
+        "fg": "rgb(136,136,153)",
+        "bg": "rgb(0,0,0)",
+        "selector": "[data-tab]:not(.active):not([aria-selected=\"true\"])"
+      }
+    }
+  },
+  "keyboard": {
+    "desktop-1440": [
+      {
+        "index": 0,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Últimos 7 dias\n            Últimos 30 dias\n       ",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 1,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Atualizar dados orgânicos",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 2,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Atualizar dados de anúncios",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 3,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "diagnostico",
+        "text": "Diagnóstico",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(37, 99, 235)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(37, 99, 235)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 4,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "editoriais",
+        "text": "Linhas editoriais",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 5,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "ads",
+        "text": "Meta Ads",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "rgb(37, 99, 235) 0px -2px 0px 0px inset"
+        }
+      },
+      {
+        "index": 6,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Alcance\n              Visualizações\n              ",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 7,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Melhores primeiro\n              Piores primeiro",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 8,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Top 10\n              Top 20\n              Top 50",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 9,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "+ Nova linha",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 10,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todas as linhas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 11,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "+ Nova ideia",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 12,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todas as linhas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 13,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os temas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 14,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os formatos\n            Reel\n            Car",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 15,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os status\n            Ideia\n            Em p",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 16,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos\n            Alto\n            Médio\n         ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 17,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Campanhas\n            Conjuntos de anúncios\n      ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 18,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Investimento\n            CTR\n            CPC\n     ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 19,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 20,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 21,
+        "tag": "INPUT",
+        "type": "hidden",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 22,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 23,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 24,
+        "tag": "INPUT",
+        "type": "color",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 25,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Cancelar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 26,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "",
+        "dataTab": "",
+        "text": "Salvar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 27,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 28,
+        "tag": "INPUT",
+        "type": "hidden",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 29,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 30,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 31,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 32,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Selecione\n              Reel\n              Carross",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 33,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 34,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 35,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Ideia\n              Em produção\n              Publ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 36,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Baixo\n              Médio\n              Alto",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 37,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 38,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Cancelar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 39,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "",
+        "dataTab": "",
+        "text": "Salvar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 40,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 41,
+        "tag": "INPUT",
+        "type": "radio",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 42,
+        "tag": "INPUT",
+        "type": "radio",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 43,
+        "tag": "INPUT",
+        "type": "file",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 44,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Baixar modelo",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 45,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Restaurar demo",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 46,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Confirmar importação",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      }
+    ],
+    "desktop-1024": [
+      {
+        "index": 0,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Últimos 7 dias\n            Últimos 30 dias\n       ",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 1,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Atualizar dados orgânicos",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 2,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Atualizar dados de anúncios",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 3,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "diagnostico",
+        "text": "Diagnóstico",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(37, 99, 235)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(37, 99, 235)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 4,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "editoriais",
+        "text": "Linhas editoriais",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 5,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "ads",
+        "text": "Meta Ads",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "rgba(37, 99, 235, 1) 0px -2px 0px 0px inset"
+        }
+      },
+      {
+        "index": 6,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Alcance\n              Visualizações\n              ",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 7,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Melhores primeiro\n              Piores primeiro",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 8,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Top 10\n              Top 20\n              Top 50",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 9,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "+ Nova linha",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 10,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todas as linhas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 11,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "+ Nova ideia",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 12,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todas as linhas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 13,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os temas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 14,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os formatos\n            Reel\n            Car",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 15,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os status\n            Ideia\n            Em p",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 16,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos\n            Alto\n            Médio\n         ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 17,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Campanhas\n            Conjuntos de anúncios\n      ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 18,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Investimento\n            CTR\n            CPC\n     ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 19,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 20,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 21,
+        "tag": "INPUT",
+        "type": "hidden",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 22,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 23,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 24,
+        "tag": "INPUT",
+        "type": "color",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 25,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Cancelar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 26,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "",
+        "dataTab": "",
+        "text": "Salvar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 27,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 28,
+        "tag": "INPUT",
+        "type": "hidden",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 29,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 30,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 31,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 32,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Selecione\n              Reel\n              Carross",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 33,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 34,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 35,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Ideia\n              Em produção\n              Publ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 36,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Baixo\n              Médio\n              Alto",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 37,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 38,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Cancelar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 39,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "",
+        "dataTab": "",
+        "text": "Salvar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 40,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 41,
+        "tag": "INPUT",
+        "type": "radio",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 42,
+        "tag": "INPUT",
+        "type": "radio",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 43,
+        "tag": "INPUT",
+        "type": "file",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 44,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Baixar modelo",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 45,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Restaurar demo",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 46,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Confirmar importação",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      }
+    ],
+    "tablet-768": [
+      {
+        "index": 0,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Últimos 7 dias\n            Últimos 30 dias\n       ",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 1,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Atualizar dados orgânicos",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 2,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Atualizar dados de anúncios",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 3,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "diagnostico",
+        "text": "Diagnóstico",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(37, 99, 235)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(37, 99, 235)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 4,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "editoriais",
+        "text": "Linhas editoriais",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 5,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "ads",
+        "text": "Meta Ads",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "rgb(37, 99, 235) 0px -2px 0px 0px inset"
+        }
+      },
+      {
+        "index": 6,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Alcance\n              Visualizações\n              ",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 7,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Melhores primeiro\n              Piores primeiro",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 8,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Top 10\n              Top 20\n              Top 50",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 9,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "+ Nova linha",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 10,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todas as linhas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 11,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "+ Nova ideia",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 12,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todas as linhas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 13,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os temas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 14,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os formatos\n            Reel\n            Car",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 15,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os status\n            Ideia\n            Em p",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 16,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos\n            Alto\n            Médio\n         ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 17,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Campanhas\n            Conjuntos de anúncios\n      ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 18,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Investimento\n            CTR\n            CPC\n     ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 19,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 20,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 21,
+        "tag": "INPUT",
+        "type": "hidden",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 22,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 23,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 24,
+        "tag": "INPUT",
+        "type": "color",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 25,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Cancelar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 26,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "",
+        "dataTab": "",
+        "text": "Salvar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 27,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 28,
+        "tag": "INPUT",
+        "type": "hidden",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 29,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 30,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 31,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 32,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Selecione\n              Reel\n              Carross",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 33,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 34,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 35,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Ideia\n              Em produção\n              Publ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 36,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Baixo\n              Médio\n              Alto",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 37,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 38,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Cancelar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 39,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "",
+        "dataTab": "",
+        "text": "Salvar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 40,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 41,
+        "tag": "INPUT",
+        "type": "radio",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 42,
+        "tag": "INPUT",
+        "type": "radio",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 43,
+        "tag": "INPUT",
+        "type": "file",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 44,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Baixar modelo",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 45,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Restaurar demo",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 46,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Confirmar importação",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      }
+    ],
+    "mobile-375": [
+      {
+        "index": 0,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Últimos 7 dias\n            Últimos 30 dias\n       ",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 1,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Atualizar dados orgânicos",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 2,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Atualizar dados de anúncios",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 3,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "diagnostico",
+        "text": "Diagnóstico",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(37, 99, 235)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(37, 99, 235)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 4,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "editoriais",
+        "text": "Linhas editoriais",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 5,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "tab",
+        "dataTab": "ads",
+        "text": "Meta Ads",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "rgb(37, 99, 235) 0px -2px 0px 0px inset"
+        }
+      },
+      {
+        "index": 6,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Alcance\n              Visualizações\n              ",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 7,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Melhores primeiro\n              Piores primeiro",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 8,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Top 10\n              Top 20\n              Top 50",
+        "visible": true,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 9,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "+ Nova linha",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 10,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todas as linhas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 11,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "+ Nova ideia",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 12,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todas as linhas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 13,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os temas",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 14,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os formatos\n            Reel\n            Car",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 15,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos os status\n            Ideia\n            Em p",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 16,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Todos\n            Alto\n            Médio\n         ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 17,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Campanhas\n            Conjuntos de anúncios\n      ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 18,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Investimento\n            CTR\n            CPC\n     ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 19,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 20,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 21,
+        "tag": "INPUT",
+        "type": "hidden",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 22,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 23,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 24,
+        "tag": "INPUT",
+        "type": "color",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 25,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Cancelar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 26,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "",
+        "dataTab": "",
+        "text": "Salvar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 27,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 28,
+        "tag": "INPUT",
+        "type": "hidden",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 29,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 30,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 31,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 32,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Selecione\n              Reel\n              Carross",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 33,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 34,
+        "tag": "INPUT",
+        "type": "text",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 35,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Ideia\n              Em produção\n              Publ",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 36,
+        "tag": "SELECT",
+        "type": "select-one",
+        "role": "",
+        "dataTab": "",
+        "text": "Baixo\n              Médio\n              Alto",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 37,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 38,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Cancelar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 39,
+        "tag": "BUTTON",
+        "type": "submit",
+        "role": "",
+        "dataTab": "",
+        "text": "Salvar",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 40,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "×",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(136, 136, 153)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(136, 136, 153)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 41,
+        "tag": "INPUT",
+        "type": "radio",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 42,
+        "tag": "INPUT",
+        "type": "radio",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(0, 0, 0)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(0, 0, 0)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 43,
+        "tag": "INPUT",
+        "type": "file",
+        "role": "",
+        "dataTab": "",
+        "text": "",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(26, 26, 46)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(26, 26, 46)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 44,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Baixar modelo",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 45,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Restaurar demo",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(74, 74, 90)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(74, 74, 90)",
+          "boxShadow": "none"
+        }
+      },
+      {
+        "index": 46,
+        "tag": "BUTTON",
+        "type": "button",
+        "role": "",
+        "dataTab": "",
+        "text": "Confirmar importação",
+        "visible": false,
+        "focusStyle": {
+          "outline": "3px none rgb(255, 255, 255)",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(255, 255, 255)",
+          "boxShadow": "none"
+        }
+      }
+    ]
+  },
+  "tokens": {
+    "--bg-primary": "#fafafa",
+    "--header-height": "64px",
+    "--text-secondary": "#4a4a5a",
+    "--max-width": "1400px",
+    "--text-inverse": "#ffffff",
+    "--color-alert-text": "#991b1b",
+    "--bg-tertiary": "#f5f5f5",
+    "--color-alert": "#dc2626",
+    "--space-xs": "4px",
+    "--font-size-sm": "13px",
+    "--tabs-height": "48px",
+    "--gray-900": "#171717",
+    "--font-size-base": "15px",
+    "--font-size-xl": "20px",
+    "--shadow-sm": "0 1px 2px rgba(0, 0, 0, 0.05)",
+    "--font-size-3xl": "36px",
+    "--color-warning-text": "#92400e",
+    "--color-primary-hover": "#1d4ed8",
+    "--sidebar-width": "280px",
+    "--shadow-md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+    "--radius-sm": "4px",
+    "--shadow-lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
+    "--text-primary": "#1a1a2e",
+    "--font-size-lg": "17px",
+    "--transition-normal": "250ms ease",
+    "--bg-hover": "#eeeeee",
+    "--color-primary": "#2563eb",
+    "--text-muted": "#888899",
+    "--gray-100": "#f5f5f5",
+    "--gray-400": "#a3a3a3",
+    "--font-size-2xl": "28px",
+    "--space-xl": "32px",
+    "--space-md": "16px",
+    "--gray-800": "#262626",
+    "--font-family": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "--gray-200": "#e5e5e5",
+    "--transition-fast": "150ms ease",
+    "--color-warning": "#d97706",
+    "--color-success-text": "#166534",
+    "--color-primary-light": "#dbeafe",
+    "--font-size-xs": "11px",
+    "--border-color": "#e5e5e5",
+    "--color-success-light": "#dcfce7",
+    "--color-success": "#16a34a",
+    "--radius-md": "8px",
+    "--bg-secondary": "#ffffff",
+    "--radius-lg": "12px",
+    "--color-primary-text": "#1e40af",
+    "--color-alert-light": "#fee2e2",
+    "--gray-600": "#525252",
+    "--color-warning-light": "#fef3c7",
+    "--border-color-strong": "#d4d4d4",
+    "--gray-700": "#404040",
+    "--gray-300": "#d4d4d4",
+    "--space-sm": "8px",
+    "--space-lg": "24px",
+    "--space-2xl": "48px",
+    "--gray-500": "#737373"
+  },
+  "components": {
+    "buttons": {
+      "count": 18,
+      "classes": [
+        "btn btn-secondary",
+        "tab-btn active",
+        "tab-btn",
+        "btn btn-primary",
+        "modal-close",
+        "btn btn-secondary modal-cancel"
+      ],
+      "sample": "<button type=\"button\" class=\"btn btn-secondary\" id=\"import-organic\" aria-label=\"Importar CSV orgânico\">\n            <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3\"></path></svg>\n            Atualizar dados orgânicos\n          </button>"
+    },
+    "tables": {
+      "count": 9,
+      "classes": [
+        "data-table"
+      ]
+    },
+    "inputs": {
+      "count": 29,
+      "types": [
+        "select-one",
+        "hidden",
+        "text",
+        "textarea",
+        "color",
+        "radio",
+        "file"
+      ]
+    },
+    "modals": {
+      "count": 4,
+      "classes": [
+        "modal",
+        "modal modal-large"
+      ]
+    },
+    "tabs": {
+      "count": 4,
+      "classes": [
+        "tabs",
+        "tab-btn active",
+        "tab-btn"
+      ]
+    },
+    "charts": {
+      "count": 10,
+      "classes": [
+        ""
+      ]
+    },
+    "kpis": {
+      "count": 3,
+      "classes": [
+        "kpi-grid"
+      ]
+    }
+  }
+}

@@ -1,0 +1,351 @@
+/**
+ * Testes de validação determinística das fórmulas de métricas
+ * Executa no console do navegador: runMetricsValidation()
+ */
+
+import {
+  safeDivide,
+  safePercent,
+  calculateRates,
+  aggregateAds,
+  calculateFunnelPaid
+} from '../assets/js/metrics.js';
+
+function assertEqual(actual, expected, message, tolerance = 0.001) {
+  if (actual === null && expected === null) {
+    console.log(`✓ ${message}: both null`);
+    return true;
+  }
+  if (actual === null || expected === null) {
+    console.error(`✗ ${message}: expected ${expected}, got ${actual}`);
+    return false;
+  }
+  const diff = Math.abs(actual - expected);
+  if (diff <= tolerance) {
+    console.log(`✓ ${message}: ${actual} ≈ ${expected}`);
+    return true;
+  } else {
+    console.error(`✗ ${message}: expected ${expected}, got ${actual} (diff: ${diff})`);
+    return false;
+  }
+}
+
+function runMetricsValidation() {
+  console.log('=== Iniciando validação de fórmulas ===\n');
+  let passed = 0;
+  let failed = 0;
+
+  // --- Teste 1: safeDivide ---
+  console.log('--- safeDivide ---');
+  if (assertEqual(safeDivide(100, 4), 25, '100 / 4 = 25')) passed++; else failed++;
+  if (assertEqual(safeDivide(100, 0), null, '100 / 0 = null')) passed++; else failed++;
+  if (assertEqual(safeDivide(null, 4), null, 'null / 4 = null')) passed++; else failed++;
+  if (assertEqual(safeDivide(100, null), null, '100 / null = null')) passed++; else failed++;
+  if (assertEqual(safeDivide(0, 100), 0, '0 / 100 = 0')) passed++; else failed++;
+
+  // --- Teste 2: safePercent ---
+  console.log('\n--- safePercent ---');
+  if (assertEqual(safePercent(25, 100), 25, '25% de 100 = 25')) passed++; else failed++;
+  if (assertEqual(safePercent(1, 3), 33.333, '1/3 * 100 ≈ 33.333', 0.01)) passed++; else failed++;
+  if (assertEqual(safePercent(0, 100), 0, '0% de 100 = 0')) passed++; else failed++;
+  if (assertEqual(safePercent(100, 0), null, '100% de 0 = null')) passed++; else failed++;
+  if (assertEqual(safePercent(null, 100), null, 'null / 100 = null')) passed++; else failed++;
+
+  // --- Teste 3: calculateRates (orgânico) ---
+  console.log('\n--- calculateRates (orgânico) ---');
+  const post = {
+    alcance: 10000,
+    salvamentos: 500,
+    compartilhamentos: 200,
+    cliques_link: 300,
+    curtidas: 800,
+    comentarios: 100
+  };
+  const rates = calculateRates(post);
+  if (assertEqual(rates.saveRate, 5.0, 'Taxa salvamento: 500/10000 = 5%')) passed++; else failed++;
+  if (assertEqual(rates.shareRate, 2.0, 'Taxa compartilhamento: 200/10000 = 2%')) passed++; else failed++;
+  if (assertEqual(rates.clickRate, 3.0, 'Taxa cliques link: 300/10000 = 3%')) passed++; else failed++;
+  if (assertEqual(rates.engagementRate, 16.0, 'Taxa engajamento: (800+100+500+200)/10000 = 16%')) passed++; else failed++;
+
+  // Post sem alcance
+  const postNoReach = { ...post, alcance: null };
+  const ratesNoReach = calculateRates(postNoReach);
+  if (assertEqual(ratesNoReach.saveRate, null, 'Sem alcance = taxas null')) passed++; else failed++;
+
+  // --- Teste 4: aggregateAds (novo formato fact table) ---
+  console.log('\n--- aggregateAds (fact table no nível ad) ---');
+  const adsData = [
+    {
+      account_id: 'act_123',
+      campaign_id: 'camp_1',
+      campaign_name: 'Campanha Teste',
+      adset_id: 'adset_1',
+      adset_name: 'Conjunto A',
+      ad_id: 'ad_1',
+      ad_name: 'Anúncio 1',
+      creative_id: 'crv_1',
+      creative_name: 'Criativo Vídeo',
+      creative_type: 'video',
+      objective: 'CONVERSIONS',
+      status: 'active',
+      currency: 'BRL',
+      timezone: 'America/Sao_Paulo',
+      attribution_window: '7d_click',
+      data_inicio: '2026-01-01',
+      data_fim: '2026-01-31',
+      investimento: 1000,
+      impressoes: 50000,
+      alcance: 30000,
+      cliques: 1000,
+      cliques_link: 800,
+      visitas_perfil: 200,
+      conversoes: 50,
+      receita_atribuida: 2500,
+      frequencia: 1.67
+    },
+    {
+      account_id: 'act_123',
+      campaign_id: 'camp_1',
+      campaign_name: 'Campanha Teste',
+      adset_id: 'adset_1',
+      adset_name: 'Conjunto A',
+      ad_id: 'ad_2',
+      ad_name: 'Anúncio 2',
+      creative_id: 'crv_2',
+      creative_name: 'Criativo Carousel',
+      creative_type: 'carousel',
+      objective: 'CONVERSIONS',
+      status: 'active',
+      currency: 'BRL',
+      timezone: 'America/Sao_Paulo',
+      attribution_window: '7d_click',
+      data_inicio: '2026-01-01',
+      data_fim: '2026-01-31',
+      investimento: 500,
+      impressoes: 25000,
+      alcance: 15000,
+      cliques: 500,
+      cliques_link: 400,
+      visitas_perfil: 100,
+      conversoes: 25,
+      receita_atribuida: 1250,
+      frequencia: 1.67
+    },
+    {
+      account_id: 'act_123',
+      campaign_id: 'camp_2',
+      campaign_name: 'Campanha Brand',
+      adset_id: 'adset_2',
+      adset_name: 'Conjunto B',
+      ad_id: 'ad_3',
+      ad_name: 'Anúncio 3',
+      creative_id: 'crv_3',
+      creative_name: 'Criativo Imagem',
+      creative_type: 'image',
+      objective: 'BRAND_AWARENESS',
+      status: 'paused',
+      currency: 'BRL',
+      timezone: 'America/Sao_Paulo',
+      attribution_window: '7d_click',
+      data_inicio: '2026-02-01',
+      data_fim: '2026-02-28',
+      investimento: 2000,
+      impressoes: 100000,
+      alcance: 60000,
+      cliques: 2000,
+      cliques_link: 0,
+      visitas_perfil: 0,
+      conversoes: 0,
+      receita_atribuida: 0,
+      frequencia: 1.67
+    }
+  ];
+
+  const agg = aggregateAds(adsData);
+
+  // Totais gerais
+  if (assertEqual(agg.totals.investimento, 3500, 'Investimento total = 3500')) passed++; else failed++;
+  if (assertEqual(agg.totals.impressoes, 175000, 'Impressões total = 175000')) passed++; else failed++;
+  if (assertEqual(agg.totals.alcance, 105000, 'Alcance total = 105000')) passed++; else failed++;
+  if (assertEqual(agg.totals.cliques, 3500, 'Cliques total = 3500')) passed++; else failed++;
+  if (assertEqual(agg.totals.cliques_link, 1200, 'Cliques link total = 1200')) passed++; else failed++;
+  if (assertEqual(agg.totals.conversoes, 75, 'Conversões total = 75')) passed++; else failed++;
+  if (assertEqual(agg.totals.receita_atribuida, 3750, 'Receita total = 3750')) passed++; else failed++;
+
+  // CPM = investimento / (impressoes / 1000)
+  const expectedCpm = 3500 / (175000 / 1000); // = 20
+  if (assertEqual(agg.totals.cpm, expectedCpm, `CPM total = ${expectedCpm.toFixed(2)}`)) passed++; else failed++;
+
+  // CPC = investimento / cliques
+  const expectedCpc = 3500 / 3500; // = 1
+  if (assertEqual(agg.totals.cpc, expectedCpc, `CPC total = ${expectedCpc.toFixed(2)}`)) passed++; else failed++;
+
+  // CTR = cliques / impressoes * 100
+  const expectedCtr = (3500 / 175000) * 100; // = 2%
+  if (assertEqual(agg.totals.ctr, expectedCtr, `CTR total = ${expectedCtr.toFixed(2)}%`)) passed++; else failed++;
+
+  // Custo por conversão = investimento / conversoes
+  const expectedCpa = 3500 / 75; // = 46.67
+  if (assertEqual(agg.totals.costPerConversion, expectedCpa, `CPA total = ${expectedCpa.toFixed(2)}`, 0.01)) passed++; else failed++;
+
+  // ROAS = receita / investimento
+  const expectedRoas = 3750 / 3500; // = 1.0714
+  if (assertEqual(agg.totals.roas, expectedRoas, `ROAS total = ${expectedRoas.toFixed(4)}x`, 0.0001)) passed++; else failed++;
+
+  // Frequência média ponderada = (freq1*alcance1 + freq2*alcance2 + freq3*alcance3) / (alcance1+alcance2+alcance3)
+  // Como todos têm frequencia 1.67, resultado deve ser 1.67
+  if (assertEqual(agg.totals.frequencia, 1.67, 'Frequência média ponderada = 1.67', 0.01)) passed++; else failed++;
+
+  // --- Teste 5: Agregação por campanha ---
+  console.log('\n--- Agregação por campanha ---');
+  const camp1 = agg.byCampaign.find(c => c.campaign_id === 'camp_1');
+  const camp2 = agg.byCampaign.find(c => c.campaign_id === 'camp_2');
+
+  if (camp1) {
+    if (assertEqual(camp1.investimento, 1500, 'Campanha 1 investimento = 1500')) passed++; else failed++;
+    if (assertEqual(camp1.impressoes, 75000, 'Campanha 1 impressoes = 75000')) passed++; else failed++;
+    if (assertEqual(camp1.conversoes, 75, 'Campanha 1 conversoes = 75')) passed++; else failed++;
+    if (assertEqual(camp1.receita_atribuida, 3750, 'Campanha 1 receita = 3750')) passed++; else failed++;
+    if (assertEqual(camp1.roas, 3750/1500, 'Campanha 1 ROAS = 2.5', 0.001)) passed++; else failed++;
+  }
+
+  if (camp2) {
+    if (assertEqual(camp2.investimento, 2000, 'Campanha 2 investimento = 2000')) passed++; else failed++;
+    if (assertEqual(camp2.conversoes, 0, 'Campanha 2 conversoes = 0')) passed++; else failed++;
+    if (assertEqual(camp2.roas, 0, 'Campanha 2 ROAS = 0')) passed++; else failed++;
+  }
+
+  // --- Teste 6: Agregação por adset ---
+  console.log('\n--- Agregação por adset ---');
+  const adset1 = agg.byAdset.find(a => a.adset_id === 'adset_1');
+  const adset2 = agg.byAdset.find(a => a.adset_id === 'adset_2');
+
+  if (adset1) {
+    if (assertEqual(adset1.investimento, 1500, 'Adset 1 investimento = 1500')) passed++; else failed++;
+    if (assertEqual(adset1.count, 2, 'Adset 1 count = 2 anúncios')) passed++; else failed++;
+  }
+
+  if (adset2) {
+    if (assertEqual(adset2.investimento, 2000, 'Adset 2 investimento = 2000')) passed++; else failed++;
+    if (assertEqual(adset2.count, 1, 'Adset 2 count = 1 anúncio')) passed++; else failed++;
+  }
+
+  // --- Teste 7: Agregação por criativo ---
+  console.log('\n--- Agregação por criativo ---');
+  const crv1 = agg.byCreative.find(c => c.creative_id === 'crv_1');
+  const crv2 = agg.byCreative.find(c => c.creative_id === 'crv_2');
+  const crv3 = agg.byCreative.find(c => c.creative_id === 'crv_3');
+
+  if (crv1) {
+    if (assertEqual(crv1.investimento, 1000, 'Criativo 1 investimento = 1000')) passed++; else failed++;
+    if (assertEqual(crv1.ctr, (1000/50000)*100, 'Criativo 1 CTR = 2%', 0.01)) passed++; else failed++;
+  }
+
+  if (crv2) {
+    if (assertEqual(crv2.investimento, 500, 'Criativo 2 investimento = 500')) passed++; else failed++;
+  }
+
+  if (crv3) {
+    if (assertEqual(crv3.investimento, 2000, 'Criativo 3 investimento = 2000')) passed++; else failed++;
+  }
+
+  // --- Teste 8: calculateFunnelPaid ---
+  console.log('\n--- calculateFunnelPaid ---');
+  const funnel = calculateFunnelPaid(agg.totals);
+
+  if (assertEqual(funnel.spend, 3500, 'Spend = 3500')) passed++; else failed++;
+  if (assertEqual(funnel.impressions, 175000, 'Impressions = 175000')) passed++; else failed++;
+  if (assertEqual(funnel.reach, 105000, 'Reach = 105000')) passed++; else failed++;
+  if (assertEqual(funnel.clicks, 3500, 'Clicks = 3500')) passed++; else failed++;
+  if (assertEqual(funnel.linkClicks, 1200, 'Link Clicks = 1200')) passed++; else failed++;
+  if (assertEqual(funnel.conversions, 75, 'Conversions = 75')) passed++; else failed++;
+  if (assertEqual(funnel.revenue, 3750, 'Revenue = 3750')) passed++; else failed++;
+
+  // Taxas do funil
+  // rateSpendImpr = impressoes / investimento
+  if (assertEqual(funnel.rateSpendImpr, 175000/3500, 'Impr./R$ = 50', 0.01)) passed++; else failed++;
+  // rateImprReach = alcance / impressoes * 100
+  if (assertEqual(funnel.rateImprReach, (105000/175000)*100, 'Alcance/Impr. = 60%', 0.01)) passed++; else failed++;
+  // rateReachClicks = CTR
+  if (assertEqual(funnel.rateReachClicks, (3500/175000)*100, 'CTR = 2%', 0.01)) passed++; else failed++;
+  // rateClicksLink = cliques_link / cliques * 100
+  if (assertEqual(funnel.rateClicksLink, (1200/3500)*100, 'Link/Cliques = 34.29%', 0.01)) passed++; else failed++;
+  // rateLinkConv = conversoes / cliques_link * 100
+  if (assertEqual(funnel.rateLinkConv, (75/1200)*100, 'Conv./Link = 6.25%', 0.01)) passed++; else failed++;
+  // rateConvRevenue = ROAS
+  if (assertEqual(funnel.rateConvRevenue, 3750/3500, 'ROAS = 1.0714x', 0.0001)) passed++; else failed++;
+
+  // --- Teste 9: Casos edge ---
+  console.log('\n--- Casos edge ---');
+
+  // Anúncio sem conversões
+  const noConvAgg = aggregateAds([{
+    ...adsData[0],
+    ad_id: 'ad_4',
+    creative_id: 'crv_4',
+    creative_name: 'Criativo Sem Conv',
+    conversoes: 0,
+    receita_atribuida: 0
+  }]);
+
+  if (assertEqual(noConvAgg.totals.costPerConversion, null, 'CPA null quando conversões = 0')) passed++; else failed++;
+  if (assertEqual(noConvAgg.totals.roas, 0, 'ROAS = 0 quando receita = 0')) passed++; else failed++;
+  if (assertEqual(noConvAgg.totals.conversionRate, null, 'Conversion rate null quando cliques_link = 0')) passed++; else failed++;
+
+  // Anúncio sem cliques
+  const noClicksAgg = aggregateAds([{
+    ...adsData[0],
+    ad_id: 'ad_5',
+    creative_id: 'crv_5',
+    creative_name: 'Criativo Sem Cliques',
+    cliques: 0,
+    cliques_link: 0
+  }]);
+
+  if (assertEqual(noClicksAgg.totals.cpc, null, 'CPC null quando cliques = 0')) passed++; else failed++;
+  if (assertEqual(noClicksAgg.totals.ctr, 0, 'CTR = 0 quando cliques = 0')) passed++; else failed++;
+
+  // Frequência com valores diferentes
+  const freqAgg = aggregateAds([
+    {
+      ...adsData[0],
+      ad_id: 'ad_6',
+      creative_id: 'crv_6',
+      creative_name: 'Freq Alta',
+      alcance: 10000,
+      impressoes: 20000,
+      frequencia: 2.0
+    },
+    {
+      ...adsData[0],
+      ad_id: 'ad_7',
+      creative_id: 'crv_7',
+      creative_name: 'Freq Baixa',
+      alcance: 10000,
+      impressoes: 15000,
+      frequencia: 1.5
+    }
+  ]);
+
+  // Média ponderada: (2.0 * 10000 + 1.5 * 10000) / (10000 + 10000) = 35000/20000 = 1.75
+  if (assertEqual(freqAgg.totals.frequencia, 1.75, 'Frequência ponderada = 1.75', 0.01)) passed++; else failed++;
+
+  // --- Resumo ---
+  console.log(`\n=== RESULTADO: ${passed} passed, ${failed} failed ===`);
+  if (failed === 0) {
+    console.log('✓ Todos os testes passaram!');
+  } else {
+    console.error(`✗ ${failed} teste(s) falharam`);
+  }
+
+  return { passed, failed };
+}
+
+// Auto-executar se no browser
+if (typeof window !== 'undefined') {
+  window.runMetricsValidation = runMetricsValidation;
+  console.log('Testes carregados. Execute runMetricsValidation() no console.');
+}
+
+// Export para uso em Node.js se necessário
+export { runMetricsValidation, assertEqual };

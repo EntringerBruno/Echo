@@ -1,0 +1,41 @@
+data_publicacao,tipo_conteudo,titulo_interno,tema,linha_editorial,link_post,alcance,visualizacoes,curtidas,comentarios,salvamentos,compartilhamentos,visitas_perfil,cliques_link,seguidores_novos,origem_trafego,pago_organico,observacoes
+2026-06-01,reel,Reel Runas Iniciante,runas,Descoberta,https://instagram.com/reel/abc123,4521,5200,387,23,67,45,134,89,23,orgânico,organic,Primeiro Reel da série
+2026-06-03,carousel,Carrossel Tarot Thoth,tarot,Autoridade,https://instagram.com/p/def456,2134,null,198,15,43,28,87,42,12,orgânico,organic,Carrossel educativo 7 slides
+2026-06-05,photo,Foto Altar Pessoal,bastidores,Bastidores e prova,https://instagram.com/p/ghi789,892,null,156,8,12,7,34,18,5,orgânico,organic,Foto do altar de trabalho
+2026-06-07,reel,Reel Quimbanda Búzios,quimbanda,Prática séria,https://instagram.com/reel/jkl012,3876,4500,312,18,54,31,98,67,18,orgânico,organic,Demonstração de tiragem
+2026-06-10,carousel,Mitologia Orixás,mitos,Descoberta,https://instagram.com/p/mno345,1654,null,134,11,28,19,56,31,8,orgânico,organic,Carrossel informativo
+2026-06-12,photo,Oferta Curso Runas,oferta,Oferta clara,https://instagram.com/p/pqr678,567,null,67,4,8,3,23,45,12,orgânico,organic,Post de venda direta
+2026-06-14,reel,Reel Dúvida Seguidor,dúvidas,Descoberta,https://instagram.com/reel/stu901,5234,6100,423,31,89,52,156,98,28,orgânico,organic,Resposta a pergunta nos comentários
+2026-06-17,carousel,Prática Proteção,proteção,Prática séria,https://instagram.com/p/vwx234,2345,null,201,14,45,26,78,43,11,orgânico,organic,Ritual passo a passo
+2026-06-19,photo,Bastidores Consulta,consulta,Bastidores e prova,https://instagram.com/p/yz567,1123,null,98,6,15,8,34,21,6,orgânico,organic,Foto do ambiente de atendimento
+2026-06-21,reel,Reel Mentalidade Mago,mentalidade,Autoridade,https://instagram.com/reel/abc890,4123,4800,356,22,61,38,112,76,19,orgânico,organic,Reflexão sobre postura
+2026-06-24,carousel,Ferramenta Diário Mágico,ferramenta,Prática séria,https://instagram.com/p/def123,1876,null,167,12,34,21,67,38,9,orgânico,organic,Template para download
+2026-06-26,photo,Depoimento Aluno,depoimento,Oferta clara,https://instagram.com/p/ghi456,789,null,56,3,9,4,28,42,10,orgânico,organic,Print de feedback real
+2026-06-28,reel,Reel Erros Comuns,erros,Descoberta,https://instagram.com/reel/jkl789,3654,4200,289,19,52,29,89,54,16,orgânico,organic,Lista de 5 erros
+2026-07-01,carousel,Estudo de Caso Sucesso,caso,Autoridade,https://instagram.com/p/mno012,2012,null,178,13,38,22,72,39,10,orgânico,organic,Antes/depois de aluno
+2026-07-03,photo,Pergunta Audiência,pergunta,Descoberta,https://instagram.com/p/pqr345,1345,null,89,12,18,9,31,15,4,orgânico,organic,Enquete nos comentários
+2026-07-05,reel,Reel Rotina Matinal,rotina,Bastidores e prova,https://instagram.com/reel/stu678,4890,5600,398,25,71,41,134,82,22,orgânico,organic,Mostra prática diária
+2026-07-08,carousel,Dica Prática Velas,velas,Prática séria,https://instagram.com/p/vwx901,2234,null,189,14,41,24,69,36,9,orgânico,organic,Dica rápida 3 passos
+2026-07-10,photo,Oferta Mentoria,mentoria,Oferta clara,https://instagram.com/p/yz234,623,null,71,5,11,5,26,48,13,orgânico,organic,Inscrições abertas
+2026-07-12,reel,Reel Simbologia Runas,runas,Autoridade,https://instagram.com/reel/abc567,3987,4500,334,21,58,33,105,68,17,orgânico,organic,Análise de 3 runas
+2026-07-15,carousel,Mitos Verdades Tarot,tarot,Descoberta,https://instagram.com/p/def890,1789,null,145,10,31,18,58,29,7,orgânico,organic,5 mitos desmistificados
+2026-07-17,photo,Altar Lua Cheia,lua,Bastidores e prova,https://instagram.com/p/ghi123,1456,null,123,8,19,11,42,24,6,orgânico,organic,Ritual lua cheia
+2026-07-19,reel,Reel Exu Encruzilhada,exu,Prática séria,https://instagram.com/reel/jkl456,5678,6800,467,34,92,58,167,105,31,orgânico,organic,Invocação tradicional
+2026-07-22,carousel,Guia Iniciante Bruxaria,iniciante,Descoberta,https://instagram.com/p/mno789,2567,null,223,16,51,31,98,56,14,orgânico,organic,Guia completo 10 slides
+2026-07-24,photo,Resultado Aluno,resultado,Oferta clara,https://instagram.com/p/pqr012,834,null,62,4,10,5,29,44,11,orgânico,organic,Print de conquista
+2026-07-26,reel,Reel Pergunta Frequente,dúvidas,Descoberta,https://instagram.com/reel/stu345,4321,5100,367,24,63,37,118,74,20,orgânico,organic,Resposta sobre iniciação
+2026-07-29,carousel,Prática Banho Ervas,ervas,Prática séria,https://instagram.com/p/vwx678,2145,null,178,12,37,20,71,38,10,orgânico,organic,Receita e modo de fazer
+2026-08-01,photo,Bastidores Curso,curso,Bastidores e prova,https://instagram.com/p/yz901,1234,null,101,7,16,9,38,22,5,orgânico,organic,Gravação de aula
+2026-08-03,reel,Reel Arquétipos,arquétipos,Autoridade,https://instagram.com/reel/abc234,3789,4400,312,19,54,29,98,61,16,orgânico,organic,4 arquétipos do mago
+2026-08-05,carousel,Reflexão Ego,ego,Descoberta,https://instagram.com/p/def567,1890,null,156,11,33,19,62,33,8,orgânico,organic,Texto reflexivo curto
+2026-08-08,photo,Oferta Black Friday,blackfriday,Oferta clara,https://instagram.com/p/ghi890,712,null,58,3,9,4,24,41,9,orgânico,organic,Desconto por tempo limitado
+2026-08-10,reel,Reel Sim Sim Não,não,Prática séria,https://instagram.com/reel/jkl123,5123,6000,423,28,78,45,145,89,24,orgânico,organic,Técnica de decisão
+2026-08-12,carousel,Dicas Iniciantes,iniciante,Descoberta,https://instagram.com/p/mno456,2345,null,198,14,42,25,81,45,12,orgânico,organic,7 dicas essenciais
+2026-08-15,photo,Depoimento Curso,depoimento,Oferta clara,https://instagram.com/p/pqr789,923,null,67,4,11,6,31,47,12,orgânico,organic,Vídeo depoimento curto
+2026-08-17,reel,Reel Lua Nova,lua,Bastidores e prova,https://instagram.com/reel/stu012,4567,5300,378,23,66,38,128,78,21,orgânico,organic,Ritual lua nova
+2026-08-20,carousel,Proteção Lar,proteção,Prática séria,https://instagram.com/p/vwx345,2678,null,212,15,47,28,87,49,13,orgânico,organic,Passo a passo completo
+2026-08-22,photo,Pergunta Caixa,dúvidas,Descoberta,https://instagram.com/p/yz678,1567,null,98,13,21,11,35,18,5,orgânico,organic,Respostas nos Stories
+2026-08-24,reel,Reel Dinheiro Magia,dinheiro,Autoridade,https://instagram.com/reel/abc901,5342,6200,445,31,84,51,156,98,27,orgânico,organic,Mentalidade prosperidade
+2026-08-27,carousel,Erros Ritual,erros,Descoberta,https://instagram.com/p/def234,2012,null,167,12,36,21,72,38,9,orgânico,organic,3 erros fatais
+2026-08-29,photo,Oferta Nova Turma,turma,Oferta clara,https://instagram.com/p/ghi567,689,null,64,4,10,5,27,43,11,orgânico,organic,Vagas limitadas
+2026-09-01,reel,Reel Iniciação,iniciação,Prática séria,https://instagram.com/reel/jkl890,5890,6800,489,35,91,56,178,112,33,orgânico,organic,Processo iniciático

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard local para análise de métricas de conteúdo Instagram e Meta Ads">
+  <title>Content Signal — Análise de Métricas</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-brand">
+        <svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M18 20V10M12 20V4M6 20v-6"/>
+        </svg>
+        <span class="logo-text">Content Signal</span>
+        <span class="badge" id="data-badge">Dados de demonstração</span>
+      </div>
+      <div class="header-controls">
+        <div class="period-selector">
+          <label for="period-select" class="sr-only">Período de análise</label>
+          <select id="period-select" aria-label="Período de análise">
+            <option value="7d">Últimos 7 dias</option>
+            <option value="30d" selected>Últimos 30 dias</option>
+            <option value="90d">Últimos 90 dias</option>
+            <option value="custom">Personalizado</option>
+          </select>
+        </div>
+        <div class="import-buttons">
+          <button type="button" class="btn btn-secondary" id="import-organic" aria-label="Importar CSV orgânico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Atualizar dados orgânicos
+          </button>
+          <button type="button" class="btn btn-secondary" id="import-ads" aria-label="Importar CSV de anúncios">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Atualizar dados de anúncios
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Abas principais">
+    <button role="tab" aria-selected="true" aria-controls="panel-diagnostico" id="tab-diagnostico" class="tab-btn active" data-tab="diagnostico">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Diagnóstico
+    </button>
+    <button role="tab" aria-selected="false" aria-controls="panel-editoriais" id="tab-editoriais" class="tab-btn" data-tab="editoriais">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Linhas editoriais
+    </button>
+    <button role="tab" aria-selected="false" aria-controls="panel-ads" id="tab-ads" class="tab-btn" data-tab="ads">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Meta Ads
+    </button>
+  </nav>
+
+  <main class="main">
+    <!-- ABA 1: DIAGNÓSTICO -->
+    <section role="tabpanel" id="panel-diagnostico" aria-labelledby="tab-diagnostico" class="tab-panel active">
+      <div class="panel-header">
+        <h1>Diagnóstico</h1>
+        <p class="panel-subtitle">O que está funcionando, o que precisa de ajuste e onde está o gargalo do funil</p>
+      </div>
+
+      <!-- 1. VISÃO GERAL -->
+      <section class="section" aria-labelledby="visao-geral-title">
+        <h2 id="visao-geral-title" class="section-title">Visão geral</h2>
+        <div class="kpi-grid" id="kpi-overview"></div>
+      </section>
+
+      <!-- 2. DESEMPENHO POR FORMATO -->
+      <section class="section" aria-labelledby="formato-title">
+        <h2 id="formato-title" class="section-title">Desempenho por formato</h2>
+        <div class="charts-row">
+          <div class="chart-container">
+            <h3>Alcance médio por formato</h3>
+            <canvas id="chart-format-reach" aria-label="Gráfico de barras: alcance médio por formato"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Taxa de salvamento por alcance</h3>
+            <canvas id="chart-format-save-rate" aria-label="Gráfico de barras: taxa de salvamento por alcance"></canvas>
+          </div>
+        </div>
+        <div class="table-container">
+          <table id="table-format-performance" class="data-table">
+            <thead>
+              <tr>
+                <th>Formato</th>
+                <th>Posts</th>
+                <th>Alcance médio</th>
+                <th>Visualizações médias</th>
+                <th>Curtidas médias</th>
+                <th>Comentários médios</th>
+                <th>Salvamentos médios</th>
+                <th>Compart. médios</th>
+                <th>Visitas perfil</th>
+                <th>Cliques link</th>
+                <th>Taxa salv./alc.</th>
+                <th>Taxa compart./alc.</th>
+                <th>Taxa cliques/alc.</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. RANKING DE CONTEÚDOS -->
+      <section class="section" aria-labelledby="ranking-title">
+        <h2 id="ranking-title" class="section-title">Ranking de conteúdos</h2>
+        <div class="ranking-controls">
+          <div class="control-group">
+            <label for="ranking-metric" class="sr-only">Ordenar por</label>
+            <select id="ranking-metric" aria-label="Métrica para ranking">
+              <option value="reach">Alcance</option>
+              <option value="views">Visualizações</option>
+              <option value="saves">Salvamentos</option>
+              <option value="shares">Compartilhamentos</option>
+              <option value="comments">Comentários</option>
+              <option value="profile_visits">Visitas ao perfil</option>
+              <option value="link_clicks">Cliques no link</option>
+              <option value="new_followers">Seguidores novos</option>
+              <option value="engagement">Engajamento total</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="ranking-direction" class="sr-only">Direção</label>
+            <select id="ranking-direction" aria-label="Direção da ordenação">
+              <option value="desc">Melhores primeiro</option>
+              <option value="asc">Piores primeiro</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="ranking-limit" class="sr-only">Quantidade</label>
+            <select id="ranking-limit" aria-label="Quantidade de itens">
+              <option value="10">Top 10</option>
+              <option value="20">Top 20</option>
+              <option value="50">Top 50</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-container">
+          <table id="table-ranking" class="data-table">
+            <thead>
+              <tr>
+                <th>Pos.</th>
+                <th>Data</th>
+                <th>Formato</th>
+                <th>Tema</th>
+                <th>Linha editorial</th>
+                <th>Alcance</th>
+                <th>Visualizações</th>
+                <th>Curtidas</th>
+                <th>Comentários</th>
+                <th>Salvamentos</th>
+                <th>Compart.</th>
+                <th>Visitas</th>
+                <th>Cliques</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 4. REELS -->
+      <section class="section" aria-labelledby="reels-title">
+        <h2 id="reels-title" class="section-title">Reels</h2>
+        <div class="kpi-grid" id="kpi-reels"></div>
+        <div class="charts-row">
+          <div class="chart-container">
+            <h3>Retenção média (quando disponível)</h3>
+            <canvas id="chart-reels-retention" aria-label="Gráfico de retenção de Reels"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Visualizações vs Conversão</h3>
+            <canvas id="chart-reels-conversion" aria-label="Dispersão: visualizações vs cliques no link"></canvas>
+          </div>
+        </div>
+        <div class="table-container">
+          <table id="table-reels" class="data-table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Tema</th>
+                <th>Visualizações</th>
+                <th>Alcance</th>
+                <th>Tempo médio</th>
+                <th>Taxa conclusão</th>
+                <th>Salvamentos</th>
+                <th>Compart.</th>
+                <th>Visitas</th>
+                <th>Cliques</th>
+                <th>Diagnóstico</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 5. FUNIL ORGÂNICO -->
+      <section class="section" aria-labelledby="funil-organic-title">
+        <h2 id="funil-organic-title" class="section-title">Funil orgânico</h2>
+        <div class="funnel-container" id="funnel-organic">
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-reach">—</div>
+            <div class="funnel-label">Alcance</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-profile-visits">—</div>
+            <div class="funnel-label">Visitas ao perfil</div>
+            <div class="funnel-rate" id="rate-reach-profile">—</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-link-clicks">—</div>
+            <div class="funnel-label">Cliques no link</div>
+            <div class="funnel-rate" id="rate-profile-clicks">—</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-dms">—</div>
+            <div class="funnel-label">DMs <span class="manual-badge">manual</span></div>
+            <div class="funnel-rate" id="rate-clicks-dms">—</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-conversions">—</div>
+            <div class="funnel-label">Conversões <span class="manual-badge">manual</span></div>
+            <div class="funnel-rate" id="rate-dms-conversions">—</div>
+          </div>
+        </div>
+        <p class="funnel-note">Etapas marcadas como <span class="manual-badge">manual</span> dependem de preenchimento pelo usuário. Taxas calculadas apenas quando há dados nas duas etapas.</p>
+      </section>
+
+      <!-- 6. DIAGNÓSTICO AUTOMÁTICO -->
+      <section class="section" aria-labelledby="auto-diag-title">
+        <h2 id="auto-diag-title" class="section-title">Diagnóstico automático</h2>
+        <div id="auto-diagnosis" class="diagnosis-list"></div>
+      </section>
+    </section>
+
+    <!-- ABA 2: LINHAS EDITORIAIS -->
+    <section role="tabpanel" id="panel-editoriais" aria-labelledby="tab-editoriais" class="tab-panel" hidden>
+      <div class="panel-header">
+        <h1>Linhas editoriais</h1>
+        <p class="panel-subtitle">Quais linhas de conteúdo devo priorizar para atrair, qualificar e converter</p>
+      </div>
+
+      <!-- 1. VISÃO POR LINHA EDITORIAL -->
+      <section class="section" aria-labelledby="linhas-title">
+        <h2 id="linhas-title" class="section-title">Visão por linha editorial</h2>
+        <div class="editorial-header">
+          <h3>Linhas configuradas</h3>
+          <button type="button" class="btn btn-primary" id="add-editorial-line">+ Nova linha</button>
+        </div>
+        <div class="table-container">
+          <table id="table-editorial-lines" class="data-table">
+            <thead>
+              <tr>
+                <th>Linha editorial</th>
+                <th>Posts</th>
+                <th>Alcance total</th>
+                <th>Alcance médio</th>
+                <th>Visualizações médias</th>
+                <th>Curtidas</th>
+                <th>Comentários</th>
+                <th>Salvamentos</th>
+                <th>Compart.</th>
+                <th>Visitas perfil</th>
+                <th>Cliques link</th>
+                <th>Seg. novos</th>
+                <th>Taxa salv./alc.</th>
+                <th>Taxa compart./alc.</th>
+                <th>Taxa cliques/alc.</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 2. COMPARAÇÃO ENTRE LINHAS -->
+      <section class="section" aria-labelledby="comparacao-linhas-title">
+        <h2 id="comparacao-linhas-title" class="section-title">Comparação entre linhas</h2>
+        <div class="charts-row">
+          <div class="chart-container">
+            <h3>Alcance médio por linha</h3>
+            <canvas id="chart-editorial-reach" aria-label="Gráfico de barras: alcance médio por linha editorial"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Salvamentos médios por linha</h3>
+            <canvas id="chart-editorial-saves" aria-label="Gráfico de barras: salvamentos médios por linha editorial"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Compartilhamentos médios por linha</h3>
+            <canvas id="chart-editorial-shares" aria-label="Gráfico de barras: compartilhamentos médios por linha editorial"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Visitas ao perfil por linha</h3>
+            <canvas id="chart-editorial-visits" aria-label="Gráfico de barras: visitas ao perfil por linha editorial"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. TEMAS DENTRO DE CADA LINHA -->
+      <section class="section" aria-labelledby="temas-title">
+        <h2 id="temas-title" class="section-title">Temas dentro de cada linha</h2>
+        <div class="control-group">
+          <label for="theme-filter-line">Filtrar por linha:</label>
+          <select id="theme-filter-line" aria-label="Filtrar temas por linha editorial">
+            <option value="">Todas as linhas</option>
+          </select>
+        </div>
+        <div class="table-container">
+          <table id="table-themes" class="data-table">
+            <thead>
+              <tr>
+                <th>Linha</th>
+                <th>Tema</th>
+                <th>Posts</th>
+                <th>Alcance médio</th>
+                <th>Salvamentos</th>
+                <th>Compart.</th>
+                <th>Comentários</th>
+                <th>Visitas</th>
+                <th>Cliques</th>
+                <th>Sugestão</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 4. SUGESTÕES DE PRIORIZAÇÃO -->
+      <section class="section" aria-labelledby="priorizacao-title">
+        <h2 id="priorizacao-title" class="section-title">Sugestões de priorização</h2>
+        <div id="prioritization-suggestions" class="suggestions-list"></div>
+      </section>
+
+      <!-- 5. BIBLIOTECA DE IDEIAS -->
+      <section class="section" aria-labelledby="biblioteca-title">
+        <h2 id="biblioteca-title" class="section-title">Biblioteca de ideias</h2>
+        <div class="editorial-header">
+          <h3>Ideias registradas</h3>
+          <button type="button" class="btn btn-primary" id="add-idea">+ Nova ideia</button>
+        </div>
+        <div class="control-row">
+          <select id="idea-filter-line" aria-label="Filtrar por linha editorial">
+            <option value="">Todas as linhas</option>
+          </select>
+          <select id="idea-filter-theme" aria-label="Filtrar por tema">
+            <option value="">Todos os temas</option>
+          </select>
+          <select id="idea-filter-format" aria-label="Filtrar por formato">
+            <option value="">Todos os formatos</option>
+            <option value="reel">Reel</option>
+            <option value="carousel">Carrossel</option>
+            <option value="photo">Foto</option>
+            <option value="story">Story</option>
+          </select>
+          <select id="idea-filter-status" aria-label="Filtrar por status">
+            <option value="">Todos os status</option>
+            <option value="idea">Ideia</option>
+            <option value="production">Em produção</option>
+            <option value="published">Publicado</option>
+            <option value="archived">Arquivado</option>
+          </select>
+          <select id="idea-filter-ad-potential" aria-label="Filtrar por potencial para anúncio">
+            <option value="">Todos</option>
+            <option value="high">Alto</option>
+            <option value="medium">Médio</option>
+            <option value="low">Baixo</option>
+          </select>
+        </div>
+        <div class="table-container">
+          <table id="table-ideas" class="data-table">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Linha</th>
+                <th>Tema</th>
+                <th>Formato</th>
+                <th>Gancho</th>
+                <th>CTA</th>
+                <th>Status</th>
+                <th>Potencial ad</th>
+                <th>Observações</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- ABA 3: META ADS -->
+    <section role="tabpanel" id="panel-ads" aria-labelledby="tab-ads" class="tab-panel" hidden>
+      <div class="panel-header">
+        <h1>Meta Ads</h1>
+        <p class="panel-subtitle">Quanto estou investindo, o que está funcionando e quais criativos entregam melhor resultado</p>
+      </div>
+
+      <!-- 1. VISÃO GERAL DE ANÚNCIOS -->
+      <section class="section" aria-labelledby="ads-overview-title">
+        <h2 id="ads-overview-title" class="section-title">Visão geral de anúncios</h2>
+        <div class="kpi-grid" id="kpi-ads-overview"></div>
+      </section>
+
+      <!-- 2. CAMPANHAS, CONJUNTOS E CRIATIVOS -->
+      <section class="section" aria-labelledby="ads-hierarchy-title">
+        <h2 id="ads-hierarchy-title" class="section-title">Campanhas, conjuntos e criativos</h2>
+        <div class="control-group">
+          <label for="ads-level-select" class="sr-only">Nível de visualização</label>
+          <select id="ads-level-select" aria-label="Nível de visualização">
+            <option value="campaign">Campanhas</option>
+            <option value="adset">Conjuntos de anúncios</option>
+            <option value="ad">Anúncios</option>
+            <option value="creative">Criativos</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="ads-sort-select" class="sr-only">Ordenar por</label>
+          <select id="ads-sort-select" aria-label="Ordenar por">
+            <option value="spend">Investimento</option>
+            <option value="ctr">CTR</option>
+            <option value="cpc">CPC</option>
+            <option value="conversions">Conversões</option>
+            <option value="cost_per_conversion">Custo por conversão</option>
+            <option value="roas">ROAS</option>
+          </select>
+        </div>
+        <div class="table-container">
+          <table id="table-ads" class="data-table">
+            <thead>
+              <tr>
+                <th>Nível</th>
+                <th>Nome</th>
+                <th>Campanha</th>
+                <th>Conjunto</th>
+                <th>Objetivo</th>
+                <th>Status</th>
+                <th>Período</th>
+                <th>Investimento</th>
+                <th>Impressões</th>
+                <th>Alcance</th>
+                <th>Cliques</th>
+                <th>Cliques link</th>
+                <th>CTR</th>
+                <th>CPC</th>
+                <th>Conversões</th>
+                <th>Custo/conv.</th>
+                <th>ROAS</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. ANÁLISE DE CRIATIVOS -->
+      <section class="section" aria-labelledby="creative-analysis-title">
+        <h2 id="creative-analysis-title" class="section-title">Análise de criativos</h2>
+        <div class="charts-row">
+          <div class="chart-container">
+            <h3>CTR vs Custo por conversão</h3>
+            <canvas id="chart-creative-ctr-cpc" aria-label="Dispersão: CTR vs custo por conversão"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Investimento vs ROAS</h3>
+            <canvas id="chart-creative-spend-roas" aria-label="Dispersão: investimento vs ROAS"></canvas>
+          </div>
+        </div>
+        <div class="table-container">
+          <table id="table-creatives" class="data-table">
+            <thead>
+              <tr>
+                <th>Criativo</th>
+                <th>Formato</th>
+                <th>Campanha</th>
+                <th>Conjunto</th>
+                <th>Investimento</th>
+                <th>Impressões</th>
+                <th>Alcance</th>
+                <th>Cliques</th>
+                <th>Cliques link</th>
+                <th>CTR</th>
+                <th>CPC</th>
+                <th>Conversões</th>
+                <th>Custo/conv.</th>
+                <th>ROAS</th>
+                <th>Frequência</th>
+                <th>Período</th>
+                <th>Status</th>
+                <th>Diagnóstico</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 4. FUNIL PAGO -->
+      <section class="section" aria-labelledby="funnel-paid-title">
+        <h2 id="funnel-paid-title" class="section-title">Funil pago</h2>
+        <div class="funnel-container" id="funnel-paid">
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-spend">—</div>
+            <div class="funnel-label">Investimento</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-impressions">—</div>
+            <div class="funnel-label">Impressões</div>
+            <div class="funnel-rate" id="rate-spend-impr">—</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-reach-paid">—</div>
+            <div class="funnel-label">Alcance</div>
+            <div class="funnel-rate" id="rate-impr-reach">—</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-clicks">—</div>
+            <div class="funnel-label">Cliques</div>
+            <div class="funnel-rate" id="rate-reach-clicks">CTR: —</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-link-clicks-paid">—</div>
+            <div class="funnel-label">Cliques no link</div>
+            <div class="funnel-rate" id="rate-clicks-link">—</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-conversions-paid">—</div>
+            <div class="funnel-label">Conversões</div>
+            <div class="funnel-rate" id="rate-link-conv">Custo/conv.: —</div>
+          </div>
+          <div class="funnel-arrow" aria-hidden="true">→</div>
+          <div class="funnel-step">
+            <div class="funnel-value" id="funnel-revenue">—</div>
+            <div class="funnel-label">Receita <span class="manual-badge">se disponível</span></div>
+            <div class="funnel-rate" id="rate-conv-revenue">ROAS: —</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. DIAGNÓSTICO DE ANÚNCIOS -->
+      <section class="section" aria-labelledby="ads-diag-title">
+        <h2 id="ads-diag-title" class="section-title">Diagnóstico de anúncios</h2>
+        <div id="ads-diagnosis" class="diagnosis-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Content Signal — Dashboard local de análise. Dados permanecem no seu navegador.</p>
+    <p id="last-updated" class="last-updated">Nenhum carregamento realizado</p>
+  </footer>
+
+  <!-- MODAL PARA DETALHES DO POST -->
+  <dialog id="post-detail-modal" class="modal">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h3 id="modal-title">Detalhes do post</h3>
+        <button type="button" class="modal-close" aria-label="Fechar">&times;</button>
+      </header>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </dialog>
+
+  <!-- MODAL PARA ADICIONAR/EDITAR LINHA EDITORIAL -->
+  <dialog id="editorial-line-modal" class="modal">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h3 id="editorial-line-modal-title">Nova linha editorial</h3>
+        <button type="button" class="modal-close" aria-label="Fechar">&times;</button>
+      </header>
+      <form id="editorial-line-form" class="modal-form">
+        <input type="hidden" id="editorial-line-id">
+        <div class="form-group">
+          <label for="editorial-line-name">Nome da linha *</label>
+          <input type="text" id="editorial-line-name" required>
+        </div>
+        <div class="form-group">
+          <label for="editorial-line-description">Descrição</label>
+          <textarea id="editorial-line-description" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="editorial-line-color">Cor para gráficos</label>
+          <input type="color" id="editorial-line-color" value="#2563eb">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- MODAL PARA ADICIONAR/EDITAR IDEIA -->
+  <dialog id="idea-modal" class="modal">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h3 id="idea-modal-title">Nova ideia</h3>
+        <button type="button" class="modal-close" aria-label="Fechar">&times;</button>
+      </header>
+      <form id="idea-form" class="modal-form">
+        <input type="hidden" id="idea-id">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="idea-title">Título *</label>
+            <input type="text" id="idea-title" required>
+          </div>
+          <div class="form-group">
+            <label for="idea-line">Linha editorial *</label>
+            <select id="idea-line" required></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="idea-theme">Tema *</label>
+            <input type="text" id="idea-theme" required list="theme-suggestions">
+          </div>
+          <div class="form-group">
+            <label for="idea-format">Formato sugerido *</label>
+            <select id="idea-format" required>
+              <option value="">Selecione</option>
+              <option value="reel">Reel</option>
+              <option value="carousel">Carrossel</option>
+              <option value="photo">Foto</option>
+              <option value="story">Story</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="idea-hook">Gancho</label>
+          <textarea id="idea-hook" rows="2" placeholder="Primeira frase que prende a atenção"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="idea-cta">CTA sugerido</label>
+          <input type="text" id="idea-cta" placeholder="Ex: Comente sua dúvida, Link na bio, Me chame no DM">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="idea-status">Status *</label>
+            <select id="idea-status" required>
+              <option value="idea">Ideia</option>
+              <option value="production">Em produção</option>
+              <option value="published">Publicado</option>
+              <option value="archived">Arquivado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="idea-ad-potential">Potencial para anúncio *</label>
+            <select id="idea-ad-potential" required>
+              <option value="low">Baixo</option>
+              <option value="medium" selected>Médio</option>
+              <option value="high">Alto</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="idea-notes">Observações</label>
+          <textarea id="idea-notes" rows="3"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- MODAL DE IMPORTAÇÃO CSV -->
+  <dialog id="csv-import-modal" class="modal modal-large">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h3 id="csv-modal-title">Importar CSV</h3>
+        <button type="button" class="modal-close" aria-label="Fechar">&times;</button>
+      </header>
+      <div class="modal-body">
+        <div class="import-options">
+          <label class="import-type">
+            <input type="radio" name="import-type" value="organic" checked>
+            <span>Dados orgânicos</span>
+          </label>
+          <label class="import-type">
+            <input type="radio" name="import-type" value="ads">
+            <span>Dados de anúncios</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="csv-file">Arquivo CSV *</label>
+          <input type="file" id="csv-file" accept=".csv" required>
+        </div>
+        <div class="import-actions">
+          <button type="button" class="btn btn-secondary" id="download-template">Baixar modelo</button>
+          <button type="button" class="btn btn-secondary" id="restore-demo">Restaurar demo</button>
+          <button type="button" class="btn btn-primary" id="confirm-import">Confirmar importação</button>
+        </div>
+        <div id="import-preview" class="import-preview" hidden>
+          <h4>Prévia dos dados</h4>
+          <div class="table-container">
+            <table class="data-table" id="preview-table"></table>
+          </div>
+          <div id="import-warnings" class="import-warnings"></div>
+        </div>
+        <div id="import-result" class="import-result" hidden></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+# Content Signal — Dados e Segredos
+
+# Exports reais do Instagram/Meta Business Suite
+*.csv
+*.xlsx
+*.xls
+*.pdf
+
+# Credenciais, tokens, segredos
+.env
+.env.*
+.env.local
+.env.*.local
+credentials*
+tokens*
+secrets*
+*.pem
+*.key
+*.crt
+*_rsa
+*_dsa
+*.ppk
+id_*
+*.p12
+*.pfx
+
+# Configurações privadas
+config.local.js
+config.local.json
+settings.local.json
+.local/
+
+# Dependências e build
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+.esbuild/
+.turbo/
+.vercel/
+.netlify/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE e OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.iml
+
+# Testes e coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Misc
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+
+# Excluídos do commit (ferramentas de debug/inspeção locais)
+tests/debug-date.mjs
+tests/debug-freq.mjs
+tools/inspect-signal.mjs
+
+# ==========================================================================
+# PERMITIDOS EXPLICITAMENTE (templates e dados sintéticos de demonstração)
+# ==========================================================================
+!data/sample-organic.csv
+!data/sample-ads.csv
+!templates/organic-template.csv
+!templates/ads-template.csv

@@ -1,0 +1,5 @@
+data_publicacao,tipo_conteudo,titulo_interno,tema,linha_editorial,link_post,alcance,visualizacoes,curtidas,comentarios,salvamentos,compartilhamentos,visitas_perfil,cliques_link,seguidores_novos,origem_trafego,pago_organico,observacoes
+2026-01-15,reel,Título do Reel,tema,Descoberta,https://instagram.com/reel/...,1000,1200,85,5,12,8,25,18,3,orgânico,organic,
+2026-01-16,carousel,Título do Carrossel,tema,Autoridade,https://instagram.com/p/...,800,,62,4,9,5,18,10,2,orgânico,organic,
+2026-01-17,photo,Título da Foto,tema,Bastidores e prova,https://instagram.com/p/...,450,,38,2,5,3,12,6,1,orgânico,organic,
+2026-01-18,story,Título do Story,tema,Prática séria,https://instagram.com/stories/...,600,650,41,3,7,4,,4,0,orgânico,organic,Story não tem visitas_perfil/cliques_link diretos
