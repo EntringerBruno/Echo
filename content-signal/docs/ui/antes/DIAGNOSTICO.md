@@ -1,5 +1,7 @@
 # Diagnóstico de UI — Content Signal
 
+**Versão pré-correção (commit-base). Contrastes estimados; sujeitos à revisão do 0.3**
+
 **Data:** 2026-11-15  
 **Base de evidência:** 24 screenshots (4 viewports × 3 abas + 4 viewports × 3 estados), `capture-report.json`, inspeção de código (`index.html`, `assets/css/style.css`, `assets/js/charts.js`)  
 **Metodologia:** Critérios de avaliação — Hierarquia, Composição, Densidade, Tipografia, Espaçamento, Cor/Contraste, Gráficos, Interação, Responsividade, Acessibilidade
