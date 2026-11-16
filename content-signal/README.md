@@ -189,6 +189,21 @@ content-signal/
 
 ---
 
+## Logbook — Melhoria de UI (ui/signal-pilot)
+
+### 2026-11-15 — Lote 1: Tokens (Concluído)
+- **Branch**: `ui/signal-pilot` (commit f9daeee)
+- **Entregável**: `assets/css/style.css` — 33 tokens remapeados + 13 novos (Direction A: Notion princípios, Inter font)
+- **Validação**: 3 abas × 4 viewports × 2 temas = 24 capturas + medições automatizadas (Playwright)
+- **Resultados**:
+  - Contraste: 0 falhas (eram 3 críticas: tab-inactive 3.48→5.63:1, funnel-rate 3.20→4.94:1, table-header 3.20→4.94:1)
+  - Fontes <12px desktop: 0 (eram 124)
+  - Touch targets <44px mobile: 4/42 (todos `<select>` nativos — limitação conhecida)
+  - Testes: 96/96 passando
+- **Próximo**: Lote 2 — Aplicar tokens em componentes (botões, tabs, inputs, selects, badges, modais)
+
+---
+
 ## Licença
 
 MIT — veja `LICENSE`. Livre para uso, modificação, distribuição, incluindo comercial.

@@ -86,12 +86,56 @@ function setLastUpdated(type, date) {
 
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
-  if (modal) modal.showModal();
+  if (modal) {
+    modal.showModal();
+    trapFocus(modal);
+  }
 }
 
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) modal.close();
+}
+
+/**
+ * Simple focus trap for modals
+ * Keeps focus within the modal while open
+ */
+function trapFocus(modal) {
+  const focusableElements = modal.querySelectorAll(
+    'button:not(:disabled), [href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])'
+  );
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  // Focus first element
+  if (firstElement) firstElement.focus();
+
+  const handleTab = (e) => {
+    if (e.key !== 'Tab') return;
+
+    if (e.shiftKey) {
+      if (document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement?.focus();
+      }
+    } else {
+      if (document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement?.focus();
+      }
+    }
+  };
+
+  modal.addEventListener('keydown', handleTab);
+  modal.dataset.trapHandler = 'true';
+
+  // Clean up on close
+  const cleanup = () => {
+    modal.removeEventListener('keydown', handleTab);
+    modal.removeEventListener('close', cleanup);
+  };
+  modal.addEventListener('close', cleanup);
 }
 
 /* ==========================================================================

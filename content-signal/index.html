@@ -19,8 +19,8 @@
       </div>
       <div class="header-controls">
         <div class="period-selector">
-          <label for="period-select" class="sr-only">Período de análise</label>
-          <select id="period-select" aria-label="Período de análise">
+          <label for="period-select">Período de análise</label>
+          <select id="period-select">
             <option value="7d">Últimos 7 dias</option>
             <option value="30d" selected>Últimos 30 dias</option>
             <option value="90d">Últimos 90 dias</option>
@@ -112,8 +112,8 @@
         <h2 id="ranking-title" class="section-title">Ranking de conteúdos</h2>
         <div class="ranking-controls">
           <div class="control-group">
-            <label for="ranking-metric" class="sr-only">Ordenar por</label>
-            <select id="ranking-metric" aria-label="Métrica para ranking">
+            <label for="ranking-metric">Ordenar por</label>
+            <select id="ranking-metric">
               <option value="reach">Alcance</option>
               <option value="views">Visualizações</option>
               <option value="saves">Salvamentos</option>
@@ -126,15 +126,15 @@
             </select>
           </div>
           <div class="control-group">
-            <label for="ranking-direction" class="sr-only">Direção</label>
-            <select id="ranking-direction" aria-label="Direção da ordenação">
+            <label for="ranking-direction">Direção</label>
+            <select id="ranking-direction">
               <option value="desc">Melhores primeiro</option>
               <option value="asc">Piores primeiro</option>
             </select>
           </div>
           <div class="control-group">
-            <label for="ranking-limit" class="sr-only">Quantidade</label>
-            <select id="ranking-limit" aria-label="Quantidade de itens">
+            <label for="ranking-limit">Quantidade</label>
+            <select id="ranking-limit">
               <option value="10">Top 10</option>
               <option value="20">Top 20</option>
               <option value="50">Top 50</option>
@@ -313,8 +313,8 @@
       <section class="section" aria-labelledby="temas-title">
         <h2 id="temas-title" class="section-title">Temas dentro de cada linha</h2>
         <div class="control-group">
-          <label for="theme-filter-line">Filtrar por linha:</label>
-          <select id="theme-filter-line" aria-label="Filtrar temas por linha editorial">
+          <label for="theme-filter-line">Filtrar por linha</label>
+          <select id="theme-filter-line">
             <option value="">Todas as linhas</option>
           </select>
         </div>
@@ -353,32 +353,47 @@
           <button type="button" class="btn btn-primary" id="add-idea">+ Nova ideia</button>
         </div>
         <div class="control-row">
-          <select id="idea-filter-line" aria-label="Filtrar por linha editorial">
-            <option value="">Todas as linhas</option>
-          </select>
-          <select id="idea-filter-theme" aria-label="Filtrar por tema">
-            <option value="">Todos os temas</option>
-          </select>
-          <select id="idea-filter-format" aria-label="Filtrar por formato">
-            <option value="">Todos os formatos</option>
-            <option value="reel">Reel</option>
-            <option value="carousel">Carrossel</option>
-            <option value="photo">Foto</option>
-            <option value="story">Story</option>
-          </select>
-          <select id="idea-filter-status" aria-label="Filtrar por status">
-            <option value="">Todos os status</option>
-            <option value="idea">Ideia</option>
-            <option value="production">Em produção</option>
-            <option value="published">Publicado</option>
-            <option value="archived">Arquivado</option>
-          </select>
-          <select id="idea-filter-ad-potential" aria-label="Filtrar por potencial para anúncio">
-            <option value="">Todos</option>
-            <option value="high">Alto</option>
-            <option value="medium">Médio</option>
-            <option value="low">Baixo</option>
-          </select>
+          <div class="control-group">
+            <label for="idea-filter-line">Filtrar por linha</label>
+            <select id="idea-filter-line">
+              <option value="">Todas as linhas</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="idea-filter-theme">Filtrar por tema</label>
+            <select id="idea-filter-theme">
+              <option value="">Todos os temas</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="idea-filter-format">Filtrar por formato</label>
+            <select id="idea-filter-format">
+              <option value="">Todos os formatos</option>
+              <option value="reel">Reel</option>
+              <option value="carousel">Carrossel</option>
+              <option value="photo">Foto</option>
+              <option value="story">Story</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="idea-filter-status">Filtrar por status</label>
+            <select id="idea-filter-status">
+              <option value="">Todos os status</option>
+              <option value="idea">Ideia</option>
+              <option value="production">Em produção</option>
+              <option value="published">Publicado</option>
+              <option value="archived">Arquivado</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="idea-filter-ad-potential">Filtrar por potencial para anúncio</label>
+            <select id="idea-filter-ad-potential">
+              <option value="">Todos</option>
+              <option value="high">Alto</option>
+              <option value="medium">Médio</option>
+              <option value="low">Baixo</option>
+            </select>
+          </div>
         </div>
         <div class="table-container">
           <table id="table-ideas" class="data-table">
@@ -419,8 +434,8 @@
       <section class="section" aria-labelledby="ads-hierarchy-title">
         <h2 id="ads-hierarchy-title" class="section-title">Campanhas, conjuntos e criativos</h2>
         <div class="control-group">
-          <label for="ads-level-select" class="sr-only">Nível de visualização</label>
-          <select id="ads-level-select" aria-label="Nível de visualização">
+          <label for="ads-level-select">Nível de visualização</label>
+          <select id="ads-level-select">
             <option value="campaign">Campanhas</option>
             <option value="adset">Conjuntos de anúncios</option>
             <option value="ad">Anúncios</option>
@@ -428,8 +443,8 @@
           </select>
         </div>
         <div class="control-group">
-          <label for="ads-sort-select" class="sr-only">Ordenar por</label>
-          <select id="ads-sort-select" aria-label="Ordenar por">
+          <label for="ads-sort-select">Ordenar por</label>
+          <select id="ads-sort-select">
             <option value="spend">Investimento</option>
             <option value="ctr">CTR</option>
             <option value="cpc">CPC</option>
